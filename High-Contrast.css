@@ -1,0 +1,837 @@
+/* ===== BUTTON GRAPHICS via ImageView CSS ===== */
+/* Images are set on the ImageView child so fitHeight/fitWidth in FXML are preserved. */
+/* Dynamic images (drawrImage, showHideImage, showAllImage, timelineImage,            */
+/* RobotLabDrawerImage, componentTreeDrawerArrow, lockImage) stay image-only in FXML. */
+
+#makeRobotButton .image-view     { -fx-image: url("dark/newRobot.png"); }
+#homeButton .image-view          { -fx-image: url("dark/CADoodleHome.png"); }
+#logoButton .image-view          { -fx-image: url("dark/biglogo.png"); }
+#homeViewButton .image-view      { -fx-image: url("dark/home.png"); }
+#fitViewButton .image-view       { -fx-image: url("dark/fit.png"); }
+#zoomInButton .image-view        { -fx-image: url("dark/zoomIn.png"); }
+#zoomOutButton .image-view       { -fx-image: url("dark/zoomOut.png"); }
+#holeButton .image-view          { -fx-image: url("dark/holes.png"); }
+#workplaneButton .image-view     { -fx-image: url("dark/Sketcher.png"); }
+#rulerButton .image-view         { -fx-image: url("dark/ruler.png"); }
+#notesButton .image-view         { -fx-image: url("dark/notes.png"); }
+#searchButton .image-view        { -fx-image: url("dark/search.png"); }
+#hexDistributeButton .image-view { -fx-image: url("dark/distribute.png"); }
+#boltHoleButton .image-view      { -fx-image: url("dark/boltHolePattern.png"); }
+#extrudeButton .image-view       { -fx-image: url("dark/extrude.png"); }
+#filletButton .image-view        { -fx-image: url("dark/fillet.png"); }
+#visbilityButton .image-view     { -fx-image: url("dark/showMenu.png"); }
+#groupButton .image-view         { -fx-image: url("dark/group.png"); }
+#ungroupButton .image-view       { -fx-image: url("dark/ungroup.png"); }
+#alignButton .image-view         { -fx-image: url("dark/align.png"); }
+#mirronButton .image-view        { -fx-image: url("dark/mirror.png"); }
+#cruiseButton .image-view        { -fx-image: url("dark/magnet.png"); }
+#objectWorkplane .image-view     { -fx-image: url("dark/workplaneToObject.png"); }
+#dropToWorkplane .image-view     { -fx-image: url("dark/drop.png"); }
+#copyButton .image-view          { -fx-image: url("dark/copy.png"); }
+#pasteButton .image-view         { -fx-image: url("dark/paste.png"); }
+#deleteButton .image-view        { -fx-image: url("dark/trash.png"); }
+#undoButton .image-view          { -fx-image: url("dark/back.png"); }
+#redoButton .image-view          { -fx-image: url("dark/forward.png"); }
+#stl .image-view                 { -fx-image: url("dark/Script-Tab-Stl.png"); }
+#manifoldSTL .image-view         { -fx-image: url("dark/Script-Tab-Stl.png"); }
+#svg .image-view                 { -fx-image: url("dark/Script-Tab-SVG.png"); }
+#blender .image-view             { -fx-image: url("dark/Script-Tab-Blender.png"); }
+#freecad .image-view             { -fx-image: url("dark/Script-Tab-FreeCAD.png"); }
+#obj .image-view                 { -fx-image: url("dark/ObjImg.png"); }
+#type3mf .image-view             { -fx-image: url("dark/3mf.png"); }
+#exportButton .image-view        { -fx-image: url("dark/export-button.png"); }
+#newDoodle .image-view           { -fx-image: url("dark/newFile.png"); }
+#copyDoodle .image-view          { -fx-image: url("dark/copy.png"); }
+#robotHeaderImage   { -fx-image: url("dark/robot-3.png"); }
+.robot-tab-icon     { -fx-image: url("dark/robot-3.png"); }
+.dark-bulb-icon      { -fx-image: url("dark/darkBulb.png"); }
+.lit-bulb-icon      { -fx-image: url("dark/litBulb.png"); }
+.lock-icon         { -fx-image: url("dark/lock.png"); }
+.unlock-icon         { -fx-image: url("dark/unlock.png"); }
+.open-drawer              { -fx-image: url("dark/drawerClose.png"); }
+.close-drawer			  { -fx-image: url("dark/drawerOpen.png"); }
+#RobotLabDrawerImage      { -fx-image: url("dark/robot-3.png"); }
+.tree-icon                { -fx-image: url("dark/tree.png"); }
+.load-limb-arms-icon      { -fx-image: url("dark/Load-Limb-Arms.png"); }
+.advanced-config-icon     { -fx-image: url("dark/Advanced-Configuration.png"); }
+.notes-icon               { -fx-image: url("dark/notes.png"); }
+.extraGroupImage { -fx-image: url("dark/hull.png"); }
+.hullImage  { -fx-image: url("dark/hull.png"); }
+.intersectImage { -fx-image: url("dark/intersect.png"); }
+.xorImage  { -fx-image: url("dark/xor.png"); }
+/* ── Regular buttons ────────────────────────────────── */
+.button                                  { -fx-background-color: #cc0000; -fx-border-color: #ffffff; -fx-border-width: 1px; -fx-border-radius: 4px; -fx-background-radius: 4px; -fx-text-fill: #ffffff; }
+.button:hover                            { -fx-background-color: #ff3333; }
+.button:pressed                          { -fx-background-color: #ffffff; -fx-text-fill: #111111; }
+.button:focused                          { -fx-border-color: #f38ba8; -fx-border-width: 2px; }
+.button:disabled                         { -fx-opacity: 0.4; }
+
+/* ── Color Picker ───────────────────────────────────── */
+.color-picker {
+    -fx-background-color: #cc0000; /* hc-red */
+    -fx-border-color: #ffffff;     /* hc-white */
+    -fx-border-width: 1px;
+    -fx-border-radius: 4px;
+    -fx-background-radius: 4px;
+}
+
+.color-picker:hover {
+    -fx-background-color: #ff3333; /* hc-bright-red */
+}
+
+.color-picker .label {
+    -fx-text-fill: #ffffff;
+}
+
+.color-picker .arrow-button {
+    -fx-background-color: #cc0000;
+    -fx-border-color: #ffffff;
+    -fx-border-width: 0 0 0 1px;
+}
+
+.color-picker .arrow {
+    -fx-background-color: #ffffff;
+}
+
+/* popup palette */
+.color-palette {
+    -fx-background-color: #111111; /* hc-black */
+    -fx-border-color: #ffffff;
+}
+
+.color-palette .hyperlink {
+    -fx-text-fill: #ffffff;
+}
+
+/* ── Progress Indicator ─────────────────────────────── */
+.progress-indicator {
+    -fx-progress-color: #ffffff; /* hc-white */
+}
+
+.progress-indicator .percentage {
+    -fx-fill: #ffffff;
+}
+
+.progress-indicator .spinner {
+    -fx-background-color: transparent;
+}
+.image-button {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+    -fx-border-width: 1px;
+    -fx-background-insets: 3;
+}
+
+#drawerButton, #timelineButton {
+    -fx-border-width: 0px;      /* No red outline for drawer icons*/
+    -fx-background-insets: 0 6; /* reduce outline of timeline/shapes drawer icon */
+}
+
+#RobotLabDrawer {
+    -fx-border-width: 0px; /* No red outline for robot drawer icon */
+}
+
+.normal-button {
+    -fx-background-color: #cc0000; /* hc-red */
+    -fx-background-insets: 0;
+    -fx-border-width: 1px;
+    -fx-border-color: #ffffff; /* hc-white */
+}
+.normal-button:focused {
+	-fx-border-width: 1px;
+    -fx-border-color: #ff0000; /* hc-pure-red */
+}
+.normal-button:pressed {
+    -fx-background-color: #ff3333; /* hc-bright-red */
+}
+.image-button:focused {
+    -fx-border-color: #ff0000; /* hc-pure-red */
+}
+.image-button:pressed {
+    -fx-background-color: #ff3333; /* hc-bright-red */
+}
+.image-button:hover {
+    -fx-background-color: #cc0000; /* hc-red */
+}
+.image-button-focus {
+    -fx-border-color: #ff0000; /* hc-pure-red */
+}
+.image-button-focus:hover {
+    -fx-background-color: #cc0000; /* hc-red */
+}
+.image-button-highlight {
+    -fx-background-color: #cc0000; /* hc-red */
+    -fx-background-insets: 0;
+}
+.image-button-highlight:hover {
+    -fx-background-color: #ff3333; /* hc-bright-red */
+}
+
+.menu-button2 {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+    -fx-border-width: 1px;
+    -fx-background-insets: 0;
+}
+
+.menu-button2:focused {
+    -fx-border-color: #ff0000; /* hc-pure-red */
+}
+.menu-button2:pressed {
+    -fx-background-color: #ff3333; /* hc-bright-red */
+}
+.menu-button2:hover {
+    -fx-background-color: #cc0000; /* hc-red */
+}
+.menu-button2-focus {
+    -fx-border-color: #ff0000;
+}
+.menu-button2-focus:hover {
+    -fx-background-color: #cc0000;
+}
+.menu-button2-highlight {
+    -fx-background-color: #cc0000;
+    -fx-background-insets: 0;
+}
+.menu-button2-highlight:hover {
+    -fx-background-color: #ff3333;
+}
+
+.anchor-pane {
+    -fx-background-color: #111111; /* hc-black */
+}
+.text-area {
+    -fx-background-color: #111111; /* hc-black */
+    -fx-border-color: #ffffff; /* hc-white */
+    -fx-border-width: 1px;
+}
+/* TextField styling */
+.text-field {
+    -fx-background-color: #111111; /* hc-black */
+    -fx-border-color: #ffffff; /* hc-white */
+    -fx-border-width: 1px;
+}
+
+/* TextArea styling */
+.text-area {
+    -fx-background-color: #111111; /* hc-black */
+    -fx-border-color: #ffffff; /* hc-white */
+    -fx-border-width: 1px;
+}
+
+/* TextArea content region */
+.text-area .content {
+    -fx-background-color: #111111; /* hc-black */
+}
+
+/* TextArea viewport */
+.text-area .viewport {
+    -fx-background-color: #111111; /* hc-black */
+}
+
+/* TextArea scroll pane overrides */
+.text-area .scroll-pane {
+    -fx-background-color: #111111; /* hc-black */
+}
+
+.text-area .scroll-pane .viewport {
+    -fx-background-color: #111111; /* hc-black */
+}
+
+/* TextArea scroll bar track (this might be the yellow culprit) */
+.text-area .scroll-bar:horizontal .track,
+.text-area .scroll-bar:vertical .track {
+    -fx-background-color: #111111; /* logo-beige instead of yellow */
+}
+.text-area .content {
+    -fx-background-color: #111111; /* hc-black */
+}
+.text-field {
+    -fx-background-color: #111111; /* hc-black */
+    -fx-wrap-text: true;
+    -fx-pref-row-count: 5; /* Adjust as needed */
+    -fx-pref-column-count: 20; /* Adjust as needed */
+    -fx-border-color: #ffffff; /* hc-white */
+}
+.vbox {
+    -fx-spacing: 10; /* Sets 10px vertical space between children */
+    -fx-padding: 10; /* Optional: adds padding inside the VBox */
+}
+
+.grid-pane {
+    -fx-grid-line-color: #ff0000; /* hc-pure-red */
+    -fx-background-color: #111111; /* hc-black */
+    -fx-background-radius: 5.0;
+    -fx-padding: 10;
+    -fx-hgap: 10;
+    -fx-vgap: 10;
+}
+
+.scroll-pane {
+    -fx-background-color: #111111; /* hc-black */
+}
+
+.scroll-pane > .viewport {
+    -fx-background-color: #111111; /* hc-black */
+}
+
+.scroll-pane .scroll-bar:horizontal,
+.scroll-pane .scroll-bar:vertical {
+    -fx-background-color: #444444; /* hc-dark-grey */
+}
+
+.scroll-pane .scroll-bar:horizontal .thumb,
+.scroll-pane .scroll-bar:vertical .thumb {
+    -fx-background-color: #444444; /* hc-dark-grey */
+}
+
+.scroll-pane .increment-button,
+.scroll-pane .decrement-button {
+    -fx-background-color: #cc0000; /* hc-red */
+}
+
+.scroll-pane .increment-arrow,
+.scroll-pane .decrement-arrow {
+    -fx-background-color: #888888; /* hc-mid-gray */
+}
+
+.scroll-pane .scroll-bar:horizontal .track,
+.scroll-pane .scroll-bar:vertical .track {
+    -fx-background-color:#cc0000; /* hc-red */
+}
+
+.scroll-pane > .corner {
+    -fx-background-color: #222222; /* dark-gray */
+}
+.separator {
+    -fx-background-color: #ffffff; /* hc-white */
+}
+
+#controlBar{
+    -fx-border-width: 1px;
+    -fx-border-color: #ffffff; /* hc-white */
+}
+
+#drawerArea{
+    -fx-border-width: 1px;
+    -fx-border-color: #ffffff; /* hc-white */
+}
+
+#shapeConfigurationBox{
+    -fx-border-width: 1px;
+    -fx-border-color: #ffffff; /* hc-white */
+}
+
+#fileNameBox{
+    -fx-background-color: #111111; /* hc-black */
+    -fx-border-width: 1px;
+    -fx-border-color: #ffffff; /* hc-white */
+}
+
+#view3d {
+    -fx-background-color:  radial-gradient(center 50% 50%, radius 30%, #1a1a1a 0%, #111111 90%); /* dark-gray to black */
+}
+
+#control3d {
+    -fx-background-color: transparent;
+}
+
+#drawerArea {
+    -fx-background-color: #111111; /* hc-black */
+}
+
+#drawerGrid{
+    -fx-background-color: #111111; /* hc-black */
+}
+
+#projectGrid{
+    -fx-background-color: #111111; /* hc-black */
+}
+
+#totalApplicationBackground{
+    -fx-background-color: #111111; /* hc-black */
+}
+
+#topBar{
+    -fx-background-color:  #111111; /* hc-black */
+}
+
+#controlBar{
+    -fx-background-color: #111111; /* hc-black */
+}
+
+#objectPallet{
+    -fx-background-color: #111111; /* hc-black */
+}
+
+#shapeConfiguration{
+    -fx-background-color: #111111; /* hc-black */
+}
+
+.titled-pane > .title {
+    -fx-background-color:  #cc0000; /* hc-red */
+}
+
+#configurationGrid{
+    -fx-background-color: #111111; /* hc-black */
+}
+
+#anchorPanForConfiguration{
+    -fx-background-color: #111111; /* hc-black */
+}
+
+#fileNameBox{
+       -fx-background-color: #111111; /* hc-black */
+}
+
+
+
+.component-tree-panel {
+    -fx-background-color: #111111; /* hc-black */
+    -fx-border-color: #ffffff; /* hc-white */
+    -fx-border-width: 1px;
+}
+
+.component-tree-resize-handle {
+    -fx-background-color: transparent;
+}
+
+.component-tree-resize-handle:hover {
+    -fx-background-color: rgba(255, 255, 255, 0.18); /* hc-white */
+}
+
+.component-tree-header {
+    -fx-background-color: #cc0000; /* hc-red */
+    -fx-border-color: #ffffff; /* hc-white */
+    -fx-border-width: 0 0 1px 0;
+    -fx-font-weight: bold;
+    -fx-padding: 6px 8px;
+    -fx-text-fill: #ffffff; /* hc-white */
+}
+
+.component-tree-view {
+    -fx-background-color: #111111; /* hc-black */
+    -fx-border-width: 0;
+}
+
+.component-tree-view .tree-cell {
+    -fx-background-color: #111111; /* hc-black */
+    -fx-text-fill: #ffffff; /* hc-white */
+}
+
+.component-tree-view .tree-cell:hover {
+    -fx-background-color: #cc0000; /* hc-red */
+}
+
+.component-tree-view .tree-cell:selected,
+.component-tree-view .tree-cell.component-tree-cell-selected {
+    -fx-background-color: #ff3333; /* hc-bright-red */
+    -fx-text-fill: #ffffff; /* hc-white */
+}
+
+.component-tree-view .tree-cell.component-tree-cell-root,
+.component-tree-view .tree-cell.component-tree-cell-group {
+    -fx-font-weight: bold;
+}
+
+.component-tree-view .tree-cell.component-tree-cell-hidden {
+    -fx-text-fill: #888888; /* hc-mid-gray */
+    -fx-font-style: italic;
+}
+
+.component-tree-visibility-button {
+    -fx-background-color: transparent;
+    -fx-background-radius: 3px;
+    -fx-border-color: transparent;
+    -fx-padding: 3px;
+}
+
+.component-tree-visibility-button:hover {
+    -fx-background-color: rgba(255, 255, 255, 0.14); /* hc-white */
+}
+
+#snapGrid{
+       -fx-background-color: #cc0000; /* hc-red */
+}
+
+/* ===== TAB PANE STYLING ===== */
+
+/* Main tab pane container */
+.tab-pane {
+    -fx-background-color: #111111; /* hc-black */
+    -fx-border-color: #ffffff; /* hc-white */
+    -fx-border-width: 1px;
+}
+
+/* Tab header area (where tab titles are displayed) */
+.tab-pane .tab-header-area {
+    -fx-background-color: #111111; /* hc-black */
+    -fx-padding: 5px;
+}
+
+/* Tab header background (the actual background behind tabs) */
+.tab-pane .tab-header-area .tab-header-background {
+    -fx-background-color: #111111; /* hc-black */
+}
+
+/* Control buttons area in tab header */
+.tab-pane .tab-header-area .control-buttons-tab {
+    -fx-background-color: #111111; /* hc-black */
+}
+
+/* Individual tab headers */
+.tab-pane .tab {
+    -fx-background-color: #cc0000; /* hc-red */
+    -fx-background-radius: 5px 5px 0px 0px;
+    -fx-border-color: #ffffff; /* hc-white */
+    -fx-border-width: 1px 1px 0px 1px;
+    -fx-padding: 8px 16px;
+    -fx-text-fill: #ffffff; /* hc-white */
+}
+
+/* Hover effect for tabs */
+.tab-pane .tab:hover {
+    -fx-background-color: #cc0000; /* hc-red */
+    -fx-cursor: hand;
+}
+
+/* Selected tab styling */
+.tab-pane .tab:selected {
+    -fx-background-color: #ff3333; /* hc-bright-red */
+    -fx-border-color: #ffffff; /* hc-white */
+    -fx-border-width: 1px 1px 0px 1px;
+    -fx-text-fill: #ffffff; /* hc-white */
+}
+
+/* Tab content area */
+.tab-pane .tab-content-area {
+    -fx-background-color: #111111; /* hc-black */
+    -fx-border-color: #ffffff; /* hc-white */
+    -fx-border-width: 1px;
+    -fx-padding: 10px;
+}
+
+/* Tab label (text) */
+.tab-pane .tab .tab-label {
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+}
+
+/* Tab close button */
+.tab-pane .tab .tab-close-button {
+    -fx-background-color: transparent;
+    -fx-shape: "M 0,0 H1 L 4,3 7,0 H8 V1 L 5,4 8,7 V8 H7 L 4,5 1,8 H0 V7 L 3,4 0,1 Z";
+    -fx-pref-width: 8px;
+    -fx-pref-height: 8px;
+    -fx-background-radius: 0;
+}
+
+.tab-pane .tab .tab-close-button:hover {
+    -fx-background-color: #ff0000; /* hc-pure-red */
+}
+
+/* Style anchor panes specifically when inside tab content */
+.tab-pane .tab-content-area .anchor-pane {
+    -fx-background-color: transparent;
+    -fx-border-width: 0px;
+    -fx-padding: 0px;
+}
+
+/* Primary theme using brand colors */
+.tab-pane.primary-theme {
+    -fx-background-color: #111111; /* hc-black */
+}
+
+.tab-pane.primary-theme .tab-header-area {
+    -fx-background-color: #111111; /* hc-black */
+}
+
+.tab-pane.primary-theme .tab {
+    -fx-background-color: #ff3333; /* hc-bright-red */
+    -fx-background-radius: 8px 8px 0px 0px;
+    -fx-border-color: #ffffff; /* hc-white */
+    -fx-text-fill: #ffffff; /* hc-white */
+    -fx-border-width: 1px;
+}
+
+.tab-pane.primary-theme .tab:hover {
+    -fx-background-color: #cc0000; /* hc-red */
+}
+
+.tab-pane.primary-theme .tab:selected {
+    -fx-background-color: #cc0000; /* hc-red */
+    -fx-text-fill: #111111; /* hc-black */
+    -fx-border-color: #ffffff; /* hc-white */
+}
+
+.tab-pane.primary-theme .tab-content-area {
+    -fx-background-color: #111111; /* hc-black */
+}
+
+/* Secondary theme */
+.tab-pane.secondary-theme {
+    -fx-background-color: #111111; /* hc-black */
+}
+
+.tab-pane.secondary-theme .tab-header-area {
+    -fx-background-color: #111111; /* hc-black */
+}
+
+.tab-pane.secondary-theme .tab {
+    -fx-background-color: #880000; /* hc-dark-red */
+    -fx-text-fill: #111111; /* hc-black */
+    -fx-border-color: #ffffff; /* hc-white */
+    -fx-border-width: 1px;
+}
+
+.tab-pane.secondary-theme .tab:hover {
+    -fx-background-color: #cc0000; /* hc-red */
+    -fx-text-fill: #ffffff; /* hc-white */
+}
+
+.tab-pane.secondary-theme .tab:selected {
+    -fx-background-color: #ffffff; /* hc-white */
+    -fx-text-fill: #111111; /* hc-black */
+}
+
+.tab-pane.secondary-theme .tab-content-area {
+    -fx-background-color: #111111; /* hc-black */
+}
+
+/* Warning/alert theme */
+.tab-pane.warning-theme {
+    -fx-background-color: #111111; /* hc-black */
+}
+
+.tab-pane.warning-theme .tab-header-area {
+    -fx-background-color: #111111; /* hc-black */
+}
+
+.tab-pane.warning-theme .tab {
+    -fx-background-color: #ff3333; /* hc-bright-red */
+    -fx-text-fill: #ffffff; /* hc-white */
+    -fx-border-color: #ff0000; /* hc-pure-red */
+    -fx-border-width: 1px;
+}
+
+.tab-pane.warning-theme .tab:selected {
+    -fx-background-color: #ff0000; /* hc-pure-red */
+    -fx-text-fill: #111111; /* hc-black */
+}
+
+.tab-pane.warning-theme .tab-content-area {
+    -fx-background-color: #111111; /* hc-black */
+}
+
+/* Small tabs */
+.tab-pane.small-tabs .tab {
+    -fx-padding: 4px 8px;
+    -fx-font-size: 12px;
+}
+
+/* Large tabs */
+.tab-pane.large-tabs .tab {
+    -fx-padding: 12px 24px;
+    -fx-font-size: 16px;
+}
+
+/* Interactive anchor pane that looks like a button */
+.anchor-pane.button-style {
+    -fx-background-color: #cc0000; /* hc-red */
+    -fx-border-color: #ffffff; /* hc-white */
+    -fx-text-fill: #ffffff; /* hc-white */
+    -fx-cursor: hand;
+    -fx-border-width: 1px;
+}
+
+.anchor-pane.button-style:hover {
+    -fx-background-color: #ff3333; /* hc-bright-red */
+}
+
+.anchor-pane.button-style:pressed {
+    -fx-background-color: #cc0000; /* hc-red */
+    -fx-text-fill: #111111; /* hc-black */
+}
+
+/* Light anchor pane variant */
+.anchor-pane.light {
+    -fx-background-color: #111111; /* hc-black */
+    -fx-effect: dropshadow(three-pass-box, rgba(255,255,255,0.2), 5, 0, 0, 2); /* hc-white with opacity */
+    -fx-border-width: 1px;
+}
+
+/* Primary colored anchor pane */
+.anchor-pane.primary {
+    -fx-background-color: #cc0000; /* hc-red */
+    -fx-border-color: #ffffff; /* hc-white */
+    -fx-text-fill: #111111; /* hc-black */
+    -fx-border-width: 1px;
+}
+
+/* Secondary colored anchor pane */
+.anchor-pane.secondary {
+    -fx-background-color: #880000; /* hc-dark-red */
+    -fx-border-color: #ffffff; /* hc-white */
+    -fx-text-fill: #111111; /* hc-black */
+    -fx-border-width: 1px;
+}
+
+/* Card style anchor pane */
+.anchor-pane.card-style {
+    -fx-background-color: #111111; /* hc-black */
+    -fx-background-radius: 8px;
+    -fx-effect: dropshadow(three-pass-box, rgba(255,255,255,0.15), 10, 0, 0, 3); /* hc-white with opacity */
+    -fx-border-width: 1px;
+    -fx-border-color: #ffffff; /* hc-white */
+    -fx-padding: 20px;
+}
+
+/* Warning/alert style anchor pane */
+.anchor-pane.warning {
+    -fx-background-color: #ff3333; /* hc-bright-red */
+    -fx-border-color: #ff0000; /* hc-pure-red */
+    -fx-text-fill: #ffffff; /* hc-white */
+    -fx-border-width: 1px;
+}
+
+/* ===== AI MODEL ADDITIONS - Claude Sonnet 4 ===== */
+
+/* Root application background - beige */
+.root {
+    -fx-background-color: #111111; /* hc-black */
+}
+
+/* All text should be blue */
+.label {
+    -fx-text-fill: #ffffff; /* hc-white */
+}
+
+/* Progress bar styling - yellow background, blue progress */
+.progress-bar {
+    -fx-background-color: #cc0000; /* logo-yellow background */
+    -fx-border-color: #ffffff; /* logo-blue border */
+    -fx-border-width: 1px;
+    -fx-background-radius: 4px;
+    -fx-border-radius: 4px;
+}
+
+.progress-bar > .bar {
+    -fx-background-color: #ffffff; /* logo-blue progress fill */
+    -fx-background-radius: 2px;
+    -fx-padding: 0.25em;
+}
+
+.combo-box {
+    -fx-background-color: #cc0000; /* hc-red */
+    -fx-border-color: #ffffff;     /* hc-white */
+    -fx-border-radius: 4px;
+    -fx-border-width: 1px;
+}
+
+.combo-box .list-cell {
+    -fx-background-color: #111111;; /* hc-red */
+    -fx-text-fill: #ffffff;        /* hc-white */
+}
+
+.combo-box-popup .list-view {
+    -fx-background-color: #111111;;
+    -fx-border-color: #ffffff;
+    -fx-border-width: 1px;
+}
+
+.combo-box-popup .list-cell {
+    -fx-background-color: #111111;
+    -fx-text-fill: #ffffff;
+}
+
+.combo-box-popup .list-cell:hover {
+    -fx-background-color: #ff3333; /* hc-bright-red */
+}
+
+.combo-box-popup .list-cell:selected {
+    -fx-background-color: #ff3333; /* hc-bright-red */
+}
+
+/* ── Scroll bars (global) ───────────────────────────── */
+.scroll-bar                              { -fx-background-color: #111111; }
+.scroll-bar .thumb                       { -fx-background-color: #444444; -fx-background-radius: 4px; }
+.scroll-bar .thumb:hover                 { -fx-background-color: #ff3333; }
+.scroll-bar .thumb:pressed               { -fx-background-color: #ff3333; }
+.scroll-bar .track                       { -fx-background-color: #111111; }
+.scroll-bar .track-background            { -fx-background-color: #111111; }
+.scroll-bar .increment-button,
+.scroll-bar .decrement-button            { -fx-background-color: #cc0000; -fx-padding: 4px; }
+.scroll-bar .increment-button:hover,
+.scroll-bar .decrement-button:hover      { -fx-background-color: #ff3333; }
+.scroll-bar .increment-arrow,
+.scroll-bar .decrement-arrow             { -fx-background-color: #444444; }
+
+/* ── Context menus ──────────────────────────────────── */
+.context-menu {
+    -fx-background-color: #111111;
+    -fx-border-color: #ffffff;
+    -fx-border-width: 1px;
+    -fx-padding: 4px 0;
+}
+.context-menu .menu-item                 { -fx-background-color: transparent; }
+.context-menu .menu-item .label          { -fx-text-fill: #ffffff; }
+.context-menu .menu-item:hover,
+.context-menu .menu-item:focused         { -fx-background-color: #cc0000; }
+.context-menu .menu-item:hover .label,
+.context-menu .menu-item:focused .label  { -fx-text-fill: #ffffff; }
+.context-menu .menu-item:disabled .label { -fx-text-fill: #666666; }
+.context-menu .separator .line           { -fx-border-color: #ffffff; -fx-border-width: 1px 0 0 0; }
+.context-menu .menu-item > .right-container > .arrow { -fx-background-color: #ffffff; }
+
+/* ── Text nodes ─────────────────────────────────────── */
+#memoryUsageText { -fx-fill: #ffffff; }
+
+/* ── Spinner ────────────────────────────────────────── */
+.spinner                                 { -fx-background-color: #cc0000; -fx-border-color: #ffffff; -fx-border-width: 1px; -fx-border-radius: 4px; }
+.spinner .text-field                     { -fx-background-color: #111111; -fx-text-fill: #ffffff; -fx-border-width: 0; }
+.spinner .increment-arrow-button,
+.spinner .decrement-arrow-button         { -fx-background-color: #cc0000; -fx-border-color: #ffffff; -fx-border-width: 0 0 0 1px; }
+.spinner .increment-arrow-button:hover,
+.spinner .decrement-arrow-button:hover   { -fx-background-color: #ff3333; }
+.spinner .increment-arrow-button:pressed,
+.spinner .decrement-arrow-button:pressed { -fx-background-color: #ff3333; }
+.spinner .increment-arrow,
+.spinner .decrement-arrow                { -fx-background-color: #ffffff; }
+
+/* ── Editable combo box (setUpNumberChoices) ────────── */
+.combo-box:editable .text-field          { -fx-background-color: #111111; -fx-text-fill: #ffffff; -fx-border-width: 0; }
+.combo-box .arrow-button                 { -fx-background-color: #cc0000; -fx-border-color: #ffffff; -fx-border-width: 0 0 0 1px; }
+.combo-box .arrow-button:hover           { -fx-background-color: #ff3333; }
+.combo-box .arrow-button .arrow          { -fx-background-color: #ffffff; }
+
+/* ── Radio buttons ──────────────────────────────────── */
+.radio-button                            { -fx-text-fill: #ffffff; }
+.radio-button .radio                     { -fx-background-color: #111111; -fx-border-color: #ffffff; -fx-border-width: 2px; -fx-border-radius: 50%; -fx-background-radius: 50%; }
+.radio-button:hover .radio               { -fx-border-color: #ff3333; }
+.radio-button:selected .radio            { -fx-border-color: #ffffff; }
+.radio-button:selected .dot              { -fx-background-color: #ffffff; -fx-background-radius: 50%; }
+
+/* ── Check boxes ────────────────────────────────────── */
+.check-box                               { -fx-text-fill: #ffffff; }
+.check-box .box                          { -fx-background-color: #111111; -fx-border-color: #ffffff; -fx-border-width: 2px; -fx-border-radius: 3px; -fx-background-radius: 3px; }
+.check-box:hover .box                    { -fx-border-color: #ff3333; }
+.check-box:selected .box                 { -fx-background-color: #ffffff; -fx-border-color: #ffffff; }
+.check-box:selected .mark                { -fx-background-color: #111111; }
+.check-box:indeterminate .box            { -fx-background-color: #cc0000; -fx-border-color: #ffffff; }
+
+/* ── MenuButton arrow/caret ─────────────────────────── */
+.menu-button .arrow-button {
+    -fx-background-color: transparent;
+}
+
+.menu-button .arrow {
+    -fx-background-color: #ffffff; /* hc-white */
+}
+
+.menu-button:hover .arrow {
+    -fx-background-color: #ffffff;
+}
+
+.menu-button:pressed .arrow {
+    -fx-background-color: #111111; /* hc-black */
+}
