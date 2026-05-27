@@ -62,7 +62,7 @@
 /* ── Regular buttons ────────────────────────────────── */
 .button                                  { -fx-background-color: #cc0000; -fx-border-color: #ffffff; -fx-border-width: 1px; -fx-border-radius: 4px; -fx-background-radius: 4px; -fx-text-fill: #ffffff; }
 .button:hover                            { -fx-background-color: #ff3333; }
-.button:pressed                          { -fx-background-color: #ffffff; -fx-text-fill: #111111; }
+.button:pressed                          { -fx-background-color: #ff3333; -fx-text-fill: #ffffff; }
 .button:focused                          { -fx-border-color: #f38ba8; -fx-border-width: 2px; }
 .button:disabled                         { -fx-opacity: 0.4; }
 
@@ -136,6 +136,7 @@
     -fx-background-insets: 0;
     -fx-border-width: 1px;
     -fx-border-color: #ffffff; /* hc-white */
+    -fx-text-fill: #ffffff; /* hc-white */
 }
 .normal-button:focused {
 	-fx-border-width: 1px;
@@ -202,12 +203,14 @@
 }
 .text-area {
     -fx-background-color: #111111; /* hc-black */
+    -fx-text-fill: #ffffff; /* hc-white */
     -fx-border-color: #ffffff; /* hc-white */
     -fx-border-width: 1px;
 }
 /* TextField styling */
 .text-field {
     -fx-background-color: #111111; /* hc-black */
+    -fx-text-fill: #ffffff; /* hc-white */
     -fx-border-color: #ffffff; /* hc-white */
     -fx-border-width: 1px;
 }
@@ -215,6 +218,7 @@
 /* TextArea styling */
 .text-area {
     -fx-background-color: #111111; /* hc-black */
+    -fx-text-fill: #ffffff; /* hc-white */
     -fx-border-color: #ffffff; /* hc-white */
     -fx-border-width: 1px;
 }
@@ -248,6 +252,7 @@
 }
 .text-field {
     -fx-background-color: #111111; /* hc-black */
+    -fx-text-fill: #ffffff; /* hc-white */
     -fx-wrap-text: true;
     -fx-pref-row-count: 5; /* Adjust as needed */
     -fx-pref-column-count: 20; /* Adjust as needed */
@@ -370,6 +375,7 @@
 
 .titled-pane > .title {
     -fx-background-color:  #cc0000; /* hc-red */
+    -fx-text-fill: #ffffff; /* hc-white */
 }
 
 #configurationGrid{
@@ -560,7 +566,7 @@
 
 .tab-pane.primary-theme .tab:selected {
     -fx-background-color: #cc0000; /* hc-red */
-    -fx-text-fill: #111111; /* hc-black */
+    -fx-text-fill: #ffffff; /* hc-white */
     -fx-border-color: #ffffff; /* hc-white */
 }
 
@@ -579,7 +585,7 @@
 
 .tab-pane.secondary-theme .tab {
     -fx-background-color: #880000; /* hc-dark-red */
-    -fx-text-fill: #111111; /* hc-black */
+    -fx-text-fill: #ffffff; /* hc-white */
     -fx-border-color: #ffffff; /* hc-white */
     -fx-border-width: 1px;
 }
@@ -590,8 +596,8 @@
 }
 
 .tab-pane.secondary-theme .tab:selected {
-    -fx-background-color: #ffffff; /* hc-white */
-    -fx-text-fill: #111111; /* hc-black */
+    -fx-background-color: #ff3333; /* hc-bright-red */
+    -fx-text-fill: #ffffff; /* hc-white */
 }
 
 .tab-pane.secondary-theme .tab-content-area {
@@ -616,7 +622,7 @@
 
 .tab-pane.warning-theme .tab:selected {
     -fx-background-color: #ff0000; /* hc-pure-red */
-    -fx-text-fill: #111111; /* hc-black */
+    -fx-text-fill: #ffffff; /* hc-white */
 }
 
 .tab-pane.warning-theme .tab-content-area {
@@ -650,7 +656,7 @@
 
 .anchor-pane.button-style:pressed {
     -fx-background-color: #cc0000; /* hc-red */
-    -fx-text-fill: #111111; /* hc-black */
+    -fx-text-fill: #ffffff; /* hc-white */
 }
 
 /* Light anchor pane variant */
@@ -664,7 +670,7 @@
 .anchor-pane.primary {
     -fx-background-color: #cc0000; /* hc-red */
     -fx-border-color: #ffffff; /* hc-white */
-    -fx-text-fill: #111111; /* hc-black */
+    -fx-text-fill: #ffffff; /* hc-white */
     -fx-border-width: 1px;
 }
 
@@ -672,7 +678,7 @@
 .anchor-pane.secondary {
     -fx-background-color: #880000; /* hc-dark-red */
     -fx-border-color: #ffffff; /* hc-white */
-    -fx-text-fill: #111111; /* hc-black */
+    -fx-text-fill: #ffffff; /* hc-white */
     -fx-border-width: 1px;
 }
 
@@ -784,6 +790,7 @@
 .context-menu .menu-item > .right-container > .arrow { -fx-background-color: #ffffff; }
 
 /* ── Text nodes ─────────────────────────────────────── */
+.text { -fx-fill: #ffffff; }
 #memoryUsageText { -fx-fill: #ffffff; }
 
 /* ── Spinner ────────────────────────────────────────── */
