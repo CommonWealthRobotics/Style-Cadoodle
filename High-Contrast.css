@@ -261,6 +261,8 @@
 .vbox {
     -fx-spacing: 10; /* Sets 10px vertical space between children */
     -fx-padding: 10; /* Optional: adds padding inside the VBox */
+    -fx-border-color: #ffffff; /* hc-white */
+    -fx-border-width: 3px;
 }
 
 .grid-pane {
