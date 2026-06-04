@@ -6,6 +6,8 @@
 #makeRobotButton .image-view     { -fx-image: url("dark/newRobot.png"); }
 #homeButton .image-view          { -fx-image: url("dark/CADoodleHome.png"); }
 .biglogo-cadoodle        		 { -fx-image: url("dark/biglogo.png"); }
+.biglogo-advanced        		 { -fx-image: url("dark/fission180.png"); }
+
 #homeViewButton .image-view      { -fx-image: url("dark/home.png"); }
 #fitViewButton .image-view       { -fx-image: url("dark/fit.png"); }
 #zoomInButton .image-view        { -fx-image: url("dark/zoomIn.png"); }
