@@ -376,3 +376,6 @@
 .hullImage  { -fx-image: url("dark/hull.png"); }
 .intersectImage { -fx-image: url("dark/intersect.png"); }
 .xorImage  { -fx-image: url("dark/xor.png"); }
+.addObject  { -fx-image: url("dark/addObject.png"); }
+
+

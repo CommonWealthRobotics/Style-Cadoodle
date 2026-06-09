@@ -61,6 +61,8 @@
 .hullImage  { -fx-image: url("dark/hull.png"); }
 .intersectImage { -fx-image: url("dark/intersect.png"); }
 .xorImage  { -fx-image: url("dark/xor.png"); }
+.addObject  { -fx-image: url("dark/addObject.png"); }
+
 /* ── Regular buttons ────────────────────────────────── */
 .button                                  { -fx-background-color: #cc0000; -fx-border-color: #ffffff; -fx-border-width: 1px; -fx-border-radius: 4px; -fx-background-radius: 4px; -fx-text-fill: #ffffff; }
 .button:hover                            { -fx-background-color: #ff3333; }
