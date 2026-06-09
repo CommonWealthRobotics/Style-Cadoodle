@@ -3,11 +3,11 @@
 /* Dynamic images (drawrImage, showHideImage, showAllImage, timelineImage,            */
 /* RobotLabDrawerImage, componentTreeDrawerArrow, lockImage) stay image-only in FXML. */
 
+
 #makeRobotButton .image-view     { -fx-image: url("dark/newRobot.png"); }
 #homeButton .image-view          { -fx-image: url("dark/CADoodleHome.png"); }
 .biglogo-cadoodle        		 { -fx-image: url("dark/biglogo.png"); }
 .biglogo-advanced        		 { -fx-image: url("dark/fission180.png"); }
-
 #homeViewButton .image-view      { -fx-image: url("dark/home.png"); }
 #fitViewButton .image-view       { -fx-image: url("dark/fit.png"); }
 #zoomInButton .image-view        { -fx-image: url("dark/zoomIn.png"); }
@@ -17,20 +17,20 @@
 #rulerButton .image-view         { -fx-image: url("dark/ruler.png"); }
 #notesButton .image-view         { -fx-image: url("dark/notes.png"); }
 #searchButton .image-view        { -fx-image: url("dark/search.png"); }
-#hexDistributeButton .image-view { -fx-image: url("dark/distribute.png"); }
-#boltHoleButton .image-view      { -fx-image: url("dark/boltHolePattern.png"); }
-#extrudeButton .image-view       { -fx-image: url("dark/extrude.png"); }
-#filletButton .image-view        { -fx-image: url("dark/fillet.png"); }
+.hexDistributeButtonImage { -fx-image: url("dark/distribute.png"); }
+.boltHoleButtonImage-view     { -fx-image: url("dark/boltHolePattern.png"); }
+.extrudeButton-image-view       { -fx-image: url("dark/extrude.png"); }
+.filletButton-image-view        { -fx-image: url("dark/fillet.png"); }
 #visbilityButton .image-view     { -fx-image: url("dark/showMenu.png"); }
-#groupButton .image-view         { -fx-image: url("dark/group.png"); }
-#ungroupButton .image-view       { -fx-image: url("dark/ungroup.png"); }
-#alignButton .image-view         { -fx-image: url("dark/align.png"); }
-#mirronButton .image-view        { -fx-image: url("dark/mirror.png"); }
+.groupButton-image-view         { -fx-image: url("dark/group.png"); }
+.ungroupButton-image-view       { -fx-image: url("dark/ungroup.png"); }
+.alignButton-mage-view         { -fx-image: url("dark/align.png"); }
+.mirronButton-image-view        { -fx-image: url("dark/mirror.png"); }
 #cruiseButton .image-view        { -fx-image: url("dark/magnet.png"); }
 #objectWorkplane .image-view     { -fx-image: url("dark/workplaneToObject.png"); }
 #dropToWorkplane .image-view     { -fx-image: url("dark/drop.png"); }
 #copyButton .image-view          { -fx-image: url("dark/copy.png"); }
-#pasteButton .image-view         { -fx-image: url("dark/paste.png"); }
+.pasteButton-mage-view         { -fx-image: url("dark/paste.png"); }
 #deleteButton .image-view        { -fx-image: url("dark/trash.png"); }
 #undoButton .image-view          { -fx-image: url("dark/back.png"); }
 #redoButton .image-view          { -fx-image: url("dark/forward.png"); }
@@ -62,7 +62,8 @@
 .intersectImage { -fx-image: url("dark/intersect.png"); }
 .xorImage  { -fx-image: url("dark/xor.png"); }
 .addObject  { -fx-image: url("dark/addObject.png"); }
-
+.moveObject  { -fx-image: url("dark/moveObject.png"); }
+.resizeObject  { -fx-image: url("dark/resizeObject.png"); }
 /* ── Regular buttons ────────────────────────────────── */
 .button                                  { -fx-background-color: #cc0000; -fx-border-color: #ffffff; -fx-border-width: 1px; -fx-border-radius: 4px; -fx-background-radius: 4px; -fx-text-fill: #ffffff; }
 .button:hover                            { -fx-background-color: #ff3333; }
