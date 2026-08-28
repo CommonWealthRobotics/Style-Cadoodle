@@ -346,7 +346,7 @@
     -fx-text-fill: #89b4fa04; /* blue */
 }
 .grid-light-color {
-    -fx-text-fill: #89b4fa04; /* blue */
+    -fx-text-fill: #45475a01; /* dark-slate, very transparent */
 }
 
 .image-button-shape-pallet {
@@ -425,7 +425,7 @@
 .bendSurface  { -fx-image: url("light/bend.png"); }
 
 .nav-cube-surface-color {
-    -fx-text-fill:  #89b4fa; /* blue */
+    -fx-text-fill:  #1e1e2e; /* theme background */
 }
 .nav-cube-edge-color {
     -fx-text-fill: #cdd6f4; /* slate */
@@ -435,5 +435,5 @@
 }
 
 .nav-cube-corner-hover {
-    -fx-text-fill: #f4ede0; /* logo-beige */
+    -fx-text-fill: #cc0000; /* red */
 }

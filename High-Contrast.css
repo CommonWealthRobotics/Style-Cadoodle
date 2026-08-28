@@ -884,7 +884,7 @@
     -fx-text-fill: #FF660004; /* hi-vis-orange */
 }
 .grid-light-color {
-    -fx-text-fill: #FF660004; /* hi-vis-orange */
+    -fx-text-fill: #33333302; /* dark-grey, more transparent */
 }
 .image-button-shape-pallet {
     -fx-background-color: #ffffffaa;
@@ -897,7 +897,7 @@
 .image-button-shape-pallet:hover         { -fx-background-color: #313244; }
 
 .nav-cube-surface-color {
-    -fx-text-fill:  #cc0000; /* hc-red */
+    -fx-text-fill:  #333333; /* hc-dark-grey */
 }
 .nav-cube-edge-color {
     -fx-text-fill: #ffffff; /* hc-white */
@@ -906,5 +906,5 @@
     -fx-text-fill: #111111; /* hc-black */
 }
 .nav-cube-corner-hover {
-    -fx-text-fill: #f4ede0; /* logo-beige */
+    -fx-text-fill: #cc0000; /* red */
 }
