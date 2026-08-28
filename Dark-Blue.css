@@ -340,13 +340,13 @@
 
 
 .grid-key-color {
-    -fx-text-fill: #ffffffaa; /* logo-blue */
+    -fx-text-fill: #89b4faaa; /* blue */
 }
 .grid-dark-color {
-    -fx-text-fill: #0838A804; /* logo-blue */
+    -fx-text-fill: #89b4fa04; /* blue */
 }
 .grid-light-color {
-    -fx-text-fill: #20206004; /* logo-blue */
+    -fx-text-fill: #89b4fa04; /* blue */
 }
 
 .image-button-shape-pallet {

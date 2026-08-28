@@ -888,13 +888,13 @@
 
 
 .grid-key-color {
-    -fx-text-fill: #0000aa; /* logo-blue */
+    -fx-text-fill: #9b3d94; /* grn-vivid */
 }
 .grid-dark-color {
-    -fx-text-fill: #0838A884; /* logo-blue */
+    -fx-text-fill: #71426c84; /* grn-deep */
 }
 .grid-light-color {
-    -fx-text-fill: #20206084; /* logo-blue */
+    -fx-text-fill: #9b689684; /* grn-medium */
 }
 .image-button-shape-pallet {
     -fx-background-color: transparent;

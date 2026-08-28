@@ -871,13 +871,13 @@
 
 
 .grid-key-color {
-    -fx-text-fill: #0000aa; /* logo-blue */
+    -fx-text-fill: #6200ea; /* lav-vivid */
 }
 .grid-dark-color {
-    -fx-text-fill: #0838A884; /* logo-blue */
+    -fx-text-fill: #3d1a6e84; /* lav-deep */
 }
 .grid-light-color {
-    -fx-text-fill: #20206084; /* logo-blue */
+    -fx-text-fill: #9b72cf84; /* lav-medium */
 }
 
 .image-button-shape-pallet {
