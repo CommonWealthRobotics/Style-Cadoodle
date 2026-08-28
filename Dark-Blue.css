@@ -424,5 +424,13 @@
 .resizeObject  { -fx-image: url("dark/resizeObject.png"); }
 .bendSurface  { -fx-image: url("light/bend.png"); }
 
-
+.nav-cube-surface-color {
+    -fx-text-fill:  #89b4fa; /* blue */
+}
+.nav-cube-edge-color {
+    -fx-text-fill: #cdd6f4; /* slate */
+}
+.nav-cube-corner-color {
+    -fx-text-fill: #45475a; /* dark */
+}
 

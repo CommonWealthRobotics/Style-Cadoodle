@@ -888,3 +888,12 @@
 .image-button-shape-pallet:pressed       { -fx-background-color: #45475a; }
 .image-button-shape-pallet:hover         { -fx-background-color: #313244; }
 
+.nav-cube-surface-color {
+    -fx-text-fill:  #48d1cc; /* teal-mid */
+}
+.nav-cube-edge-color {
+    -fx-text-fill: #edfafa; /* teal-mist */
+}
+.nav-cube-corner-color {
+    -fx-text-fill: #0a4a47; /* teal-deep */
+}

@@ -895,3 +895,13 @@
 .image-button-shape-pallet:focused       { -fx-border-color: #f38ba8; }
 .image-button-shape-pallet:pressed       { -fx-background-color: #45475a; }
 .image-button-shape-pallet:hover         { -fx-background-color: #313244; }
+
+.nav-cube-surface-color {
+    -fx-text-fill:  #cc0000; /* hc-red */
+}
+.nav-cube-edge-color {
+    -fx-text-fill: #ffffff; /* hc-white */
+}
+.nav-cube-corner-color {
+    -fx-text-fill: #111111; /* hc-black */
+}
