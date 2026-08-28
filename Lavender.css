@@ -900,3 +900,6 @@
 .nav-cube-corner-color {
     -fx-text-fill: #3d1a6e; /* lav-deep */
 }
+.nav-cube-corner-hover {
+    -fx-text-fill: #f4ede0; /* logo-beige */
+}

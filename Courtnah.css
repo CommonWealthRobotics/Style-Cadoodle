@@ -915,3 +915,7 @@
 .nav-cube-corner-color {
     -fx-text-fill: #71426c; /* grn-deep */
 }
+
+.nav-cube-corner-hover {
+    -fx-text-fill: #f4ede0; /* logo-beige */
+}

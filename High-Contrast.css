@@ -905,3 +905,6 @@
 .nav-cube-corner-color {
     -fx-text-fill: #111111; /* hc-black */
 }
+.nav-cube-corner-hover {
+    -fx-text-fill: #f4ede0; /* logo-beige */
+}

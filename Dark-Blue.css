@@ -434,3 +434,6 @@
     -fx-text-fill: #45475a; /* dark */
 }
 
+.nav-cube-corner-hover {
+    -fx-text-fill: #f4ede0; /* logo-beige */
+}
