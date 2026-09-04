@@ -4,6 +4,7 @@
 /* RobotLabDrawerImage, componentTreeDrawerArrow, lockImage) stay image-only in FXML. */
 
 
+
 #makeRobotButton .image-view     { -fx-image: url("dark/newRobot.png"); }
 #homeButton .image-view          { -fx-image: url("dark/CADoodleHome.png"); }
 .biglogo-cadoodle        		 { -fx-image: url("dark/biglogo.png"); }
@@ -129,6 +130,7 @@
     -fx-border-color: transparent;
     -fx-border-width: 1px;
     -fx-background-insets: 3;
+    -fx-text-fill: #ffffff !important;
 }
 
 #drawerButton, #timelineButton {

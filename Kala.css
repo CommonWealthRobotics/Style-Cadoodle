@@ -70,7 +70,7 @@
 /* ── Regular buttons ────────────────────────────────── */
 .button                                  { -fx-background-color: #48d1cc; -fx-border-color: #0a4a47; -fx-border-width: 1px; -fx-border-radius: 4px; -fx-background-radius: 4px; -fx-text-fill: #0a4a47; }
 .button:hover                            { -fx-background-color: #1a9e99; }
-.button:pressed                          { -fx-background-color: #0a4a47; -fx-text-fill: #edfafa; }
+.button:pressed                          { -fx-background-color: #0a4a47; -fx-text-fill: #0a4a47; }
 .button:focused                          { -fx-border-color: #f38ba8; -fx-border-width: 2px; }
 .button:disabled                         { -fx-opacity: 0.4; }
 
@@ -128,6 +128,7 @@
     -fx-border-color: transparent;
     -fx-border-width: 1px;
     -fx-background-insets: 3;
+    -fx-text-fill: #0a4a47;
 }
 
 #drawerButton, #timelineButton {
