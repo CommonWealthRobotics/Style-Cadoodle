@@ -70,6 +70,7 @@
 .resizeObject  { -fx-image: url("dark/resizeObject.png"); }
 .bendSurface  { -fx-image: url("light/bend.png"); }
 .cadoodleicon  { -fx-image: url("light/CADoodle-Icon.png"); }
+#source .image-view  { -fx-image: url("light/CADoodle-Icon.png"); }
 
 /* ── Regular buttons ────────────────────────────────── */
 .button                                  { -fx-background-color: #cc0000; -fx-border-color: #ffffff; -fx-border-width: 1px; -fx-border-radius: 4px; -fx-background-radius: 4px; -fx-text-fill: #ffffff; }

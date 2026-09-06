@@ -425,6 +425,7 @@
 .resizeObject  { -fx-image: url("dark/resizeObject.png"); }
 .bendSurface  { -fx-image: url("light/bend.png"); }
 .cadoodleicon  { -fx-image: url("light/CADoodle-Icon.png"); }
+#source .image-view  { -fx-image: url("light/CADoodle-Icon.png"); }
 
 .nav-cube-surface-color {
     -fx-text-fill:  #1e1e2e; /* theme background */
