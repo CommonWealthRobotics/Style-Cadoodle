@@ -20,6 +20,10 @@ The official themes:
 - `Kala.css`
 - `Lavender.css`
 
+User contributed:
+
+- `Milk-Chocolate.css` (aaron4ce)
+
 Open any of them as a working example while you learn the format. They are
 the best documentation of what a theme can set, and every one of them is
 live in the application today.
