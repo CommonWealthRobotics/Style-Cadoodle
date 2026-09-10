@@ -17,7 +17,8 @@
 /* Images are set on the ImageView child; most keep their FXML sizing. */
 /* Dynamic images (drawrImage, showHideImage, showAllImage, timelineImage,            */
 /* RobotLabDrawerImage, componentTreeDrawerArrow, lockImage) stay image-only in FXML. */
-
+.cadoodleicon  { -fx-image: url("light/CADoodle-Icon.png"); }
+#source .image-view  { -fx-image: url("light/CADoodle-Icon.png"); }
 #makeRobotButton .image-view     { -fx-image: url("light/newRobot.png"); }
 #homeButton .image-view          { -fx-image: url("light/CADoodleHome.png"); }
 .biglogo-cadoodle        		 { -fx-image: url("light/biglogo.png"); }
@@ -41,7 +42,7 @@
 .extrudeButton-image-view       { -fx-image: url("Milk-chocolate/extrude.png"); }
 .filletButton-image-view        { -fx-image: url("light/fillet.png"); }
 #visbilityButton .image-view     { -fx-image: url("light/showMenu.png"); }
-.groupButton-image-view         { -fx-image: url("light/group.png"); }
+.groupButton-image-view         { -fx-image: url("Milk-chocolate/group.png"); }
 .ungroupButton-image-view       { -fx-image: url("light/ungroup.png"); }
 .alignButton-mage-view         { -fx-image: url("light/align.png"); }
 .mirronButton-image-view        { -fx-image: url("light/mirror.png"); }
