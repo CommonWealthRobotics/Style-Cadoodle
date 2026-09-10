@@ -430,6 +430,8 @@
 .bendSurface  { -fx-image: url("light/bend.png"); }
 .cadoodleicon  { -fx-image: url("light/CADoodle-Icon.png"); }
 #source .image-view  { -fx-image: url("light/CADoodle-Icon.png"); }
+.orthographic-image .image-view               { -fx-image: url("light/orthographic.png"); }
+.perspective-image .image-view               { -fx-image: url("light/perspective.png "); }
 
 .nav-cube-surface-color {
     -fx-text-fill:  #1e1e2e; /* theme background */

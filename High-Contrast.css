@@ -4,6 +4,8 @@
 /* RobotLabDrawerImage, componentTreeDrawerArrow, lockImage) stay image-only in FXML. */
 
 
+.orthographic-image .image-view               { -fx-image: url("light/orthographic.png"); }
+.perspective-image .image-view               { -fx-image: url("light/perspective.png "); }
 
 #makeRobotButton .image-view     { -fx-image: url("dark/newRobot.png"); }
 #homeButton .image-view          { -fx-image: url("dark/CADoodleHome.png"); }
