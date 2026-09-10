@@ -13,7 +13,7 @@
 /* ── Regular buttons ────────────────────────────────── */
 .button                                  { -fx-background-color: #313244; -fx-border-color: #89b4fa; -fx-border-width: 1px; -fx-border-radius: 4px; -fx-background-radius: 4px; -fx-text-fill: #cdd6f4; }
 .button:hover                            { -fx-background-color: #45475a; }
-.button:pressed                          { -fx-background-color: #89b4fa; -fx-text-fill: #1e1e2e; }
+.button:pressed                          { -fx-background-color: #89b4fa; -fx-text-fill: #cdd6f4; }
 .button:focused                          { -fx-border-color: #f38ba8; -fx-border-width: 2px; }
 .button:disabled                         { -fx-opacity: 0.4; }
 
@@ -26,6 +26,7 @@
     -fx-border-color: transparent;
     -fx-border-width: 1px;
     -fx-background-insets: 3;
+    -fx-text-fill: #cdd6f4;
 }
 .image-button:focused       { -fx-border-color: #f38ba8; }
 .image-button:pressed       { -fx-background-color: #45475a; }
@@ -340,13 +341,13 @@
 
 
 .grid-key-color {
-    -fx-text-fill: #ffffffaa; /* logo-blue */
+    -fx-text-fill: #89b4faaa; /* blue */
 }
 .grid-dark-color {
-    -fx-text-fill: #0838A804; /* logo-blue */
+    -fx-text-fill: #89b4fa04; /* blue */
 }
 .grid-light-color {
-    -fx-text-fill: #20206004; /* logo-blue */
+    -fx-text-fill: #45475a01; /* dark-slate, very transparent */
 }
 
 .image-button-shape-pallet {
@@ -362,8 +363,12 @@
 #makeRobotButton .image-view     { -fx-image: url("dark/newRobot.png"); }
 #homeButton .image-view          { -fx-image: url("dark/CADoodleHome.png"); }
 .biglogo-cadoodle        		 { -fx-image: url("dark/biglogo.png"); }
-.biglogo-advanced        		 { -fx-image: url("dark/fission180.png"); }
-#homeViewButton .image-view      { -fx-image: url("dark/home.png"); }
+.biglogo-advanced {
+    -fx-image: url("Milk-chocolate/biglogoAdvanced.png");
+    -fx-fit-width: 145px;
+    -fx-fit-height: 36px;
+    -fx-preserve-ratio: true;
+}#homeViewButton .image-view      { -fx-image: url("dark/home.png"); }
 #fitViewButton .image-view       { -fx-image: url("dark/fit.png"); }
 #zoomInButton .image-view        { -fx-image: url("dark/zoomIn.png"); }
 #zoomOutButton .image-view       { -fx-image: url("dark/zoomOut.png"); }
@@ -423,6 +428,19 @@
 .moveObject  { -fx-image: url("dark/moveObject.png"); }
 .resizeObject  { -fx-image: url("dark/resizeObject.png"); }
 .bendSurface  { -fx-image: url("light/bend.png"); }
+.cadoodleicon  { -fx-image: url("light/CADoodle-Icon.png"); }
+#source .image-view  { -fx-image: url("light/CADoodle-Icon.png"); }
 
+.nav-cube-surface-color {
+    -fx-text-fill:  #1e1e2e; /* theme background */
+}
+.nav-cube-edge-color {
+    -fx-text-fill: #cdd6f4; /* slate */
+}
+.nav-cube-corner-color {
+    -fx-text-fill: #45475a; /* dark */
+}
 
-
+.nav-cube-corner-hover {
+    -fx-text-fill: #cc0000; /* red */
+}

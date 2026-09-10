@@ -4,11 +4,16 @@
 /* RobotLabDrawerImage, componentTreeDrawerArrow, lockImage) stay image-only in FXML. */
 
 
+
 #makeRobotButton .image-view     { -fx-image: url("dark/newRobot.png"); }
 #homeButton .image-view          { -fx-image: url("dark/CADoodleHome.png"); }
 .biglogo-cadoodle        		 { -fx-image: url("dark/biglogo.png"); }
-.biglogo-advanced        		 { -fx-image: url("dark/fission180.png"); }
-#homeViewButton .image-view      { -fx-image: url("dark/home.png"); }
+.biglogo-advanced {
+    -fx-image: url("Milk-chocolate/biglogoAdvanced.png");
+    -fx-fit-width: 145px;
+    -fx-fit-height: 36px;
+    -fx-preserve-ratio: true;
+}#homeViewButton .image-view      { -fx-image: url("dark/home.png"); }
 #fitViewButton .image-view       { -fx-image: url("dark/fit.png"); }
 #zoomInButton .image-view        { -fx-image: url("dark/zoomIn.png"); }
 #zoomOutButton .image-view       { -fx-image: url("dark/zoomOut.png"); }
@@ -68,6 +73,9 @@
 .moveObject  { -fx-image: url("dark/moveObject.png"); }
 .resizeObject  { -fx-image: url("dark/resizeObject.png"); }
 .bendSurface  { -fx-image: url("light/bend.png"); }
+.cadoodleicon  { -fx-image: url("light/CADoodle-Icon.png"); }
+#source .image-view  { -fx-image: url("light/CADoodle-Icon.png"); }
+
 /* ── Regular buttons ────────────────────────────────── */
 .button                                  { -fx-background-color: #cc0000; -fx-border-color: #ffffff; -fx-border-width: 1px; -fx-border-radius: 4px; -fx-background-radius: 4px; -fx-text-fill: #ffffff; }
 .button:hover                            { -fx-background-color: #ff3333; }
@@ -129,6 +137,7 @@
     -fx-border-color: transparent;
     -fx-border-width: 1px;
     -fx-background-insets: 3;
+    -fx-text-fill: #ffffff !important;
 }
 
 #drawerButton, #timelineButton {
@@ -878,13 +887,13 @@
 
 
 .grid-key-color {
-    -fx-text-fill: #ffffffaa; /* logo-blue */
+    -fx-text-fill: #FF6600aa; /* hi-vis-orange */
 }
 .grid-dark-color {
-    -fx-text-fill: #0838A804; /* logo-blue */
+    -fx-text-fill: #FF660004; /* hi-vis-orange */
 }
 .grid-light-color {
-    -fx-text-fill: #20206004; /* logo-blue */
+    -fx-text-fill: #33333302; /* dark-grey, more transparent */
 }
 .image-button-shape-pallet {
     -fx-background-color: #ffffffaa;
@@ -895,3 +904,16 @@
 .image-button-shape-pallet:focused       { -fx-border-color: #f38ba8; }
 .image-button-shape-pallet:pressed       { -fx-background-color: #45475a; }
 .image-button-shape-pallet:hover         { -fx-background-color: #313244; }
+
+.nav-cube-surface-color {
+    -fx-text-fill:  #333333; /* hc-dark-grey */
+}
+.nav-cube-edge-color {
+    -fx-text-fill: #ffffff; /* hc-white */
+}
+.nav-cube-corner-color {
+    -fx-text-fill: #111111; /* hc-black */
+}
+.nav-cube-corner-hover {
+    -fx-text-fill: #cc0000; /* red */
+}

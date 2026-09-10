@@ -3,12 +3,18 @@
 /* Dynamic images (drawrImage, showHideImage, showAllImage, timelineImage,            */
 /* RobotLabDrawerImage, componentTreeDrawerArrow, lockImage) stay image-only in FXML. */
 
+.cadoodleicon  { -fx-image: url("light/CADoodle-Icon.png"); }
+#source .image-view  { -fx-image: url("light/CADoodle-Icon.png"); }
 
 #makeRobotButton .image-view     { -fx-image: url("light/newRobot.png"); }
 #homeButton .image-view          { -fx-image: url("light/CADoodleHome.png"); }
 .biglogo-cadoodle        		 { -fx-image: url("light/biglogo.png"); }
-.biglogo-advanced        		 { -fx-image: url("light/fission180.png"); }
-#homeViewButton .image-view      { -fx-image: url("light/home.png"); }
+.biglogo-advanced {
+    -fx-image: url("Milk-chocolate/biglogoAdvanced.png");
+    -fx-fit-width: 145px;
+    -fx-fit-height: 36px;
+    -fx-preserve-ratio: true;
+}#homeViewButton .image-view      { -fx-image: url("light/home.png"); }
 #fitViewButton .image-view       { -fx-image: url("light/fit.png"); }
 #zoomInButton .image-view        { -fx-image: url("light/zoomIn.png"); }
 #zoomOutButton .image-view       { -fx-image: url("light/zoomOut.png"); }
@@ -70,7 +76,7 @@
 /* ── Regular buttons ────────────────────────────────── */
 .button                                  { -fx-background-color: #48d1cc; -fx-border-color: #0a4a47; -fx-border-width: 1px; -fx-border-radius: 4px; -fx-background-radius: 4px; -fx-text-fill: #0a4a47; }
 .button:hover                            { -fx-background-color: #1a9e99; }
-.button:pressed                          { -fx-background-color: #0a4a47; -fx-text-fill: #edfafa; }
+.button:pressed                          { -fx-background-color: #0a4a47; -fx-text-fill: #0a4a47; }
 .button:focused                          { -fx-border-color: #f38ba8; -fx-border-width: 2px; }
 .button:disabled                         { -fx-opacity: 0.4; }
 
@@ -128,6 +134,7 @@
     -fx-border-color: transparent;
     -fx-border-width: 1px;
     -fx-background-insets: 3;
+    -fx-text-fill: #0a4a47;
 }
 
 #drawerButton, #timelineButton {
@@ -870,13 +877,13 @@
 
 
 .grid-key-color {
-    -fx-text-fill: #0000aa; /* logo-blue */
+    -fx-text-fill: #0d7a76; /* teal-dark */
 }
 .grid-dark-color {
-    -fx-text-fill: #0838A884; /* logo-blue */
+    -fx-text-fill: #0a4a4784; /* teal-deep */
 }
 .grid-light-color {
-    -fx-text-fill: #20206084; /* logo-blue */
+    -fx-text-fill: #48d1cc84; /* teal-mid */
 }
 .image-button-shape-pallet {
     -fx-background-color: transparent;
@@ -888,3 +895,15 @@
 .image-button-shape-pallet:pressed       { -fx-background-color: #45475a; }
 .image-button-shape-pallet:hover         { -fx-background-color: #313244; }
 
+.nav-cube-surface-color {
+    -fx-text-fill:  #48d1cc; /* teal-mid */
+}
+.nav-cube-edge-color {
+    -fx-text-fill: #edfafa; /* teal-mist */
+}
+.nav-cube-corner-color {
+    -fx-text-fill: #0a4a47; /* teal-deep */
+}
+.nav-cube-corner-hover {
+    -fx-text-fill: #cc0000; /* red */
+}
