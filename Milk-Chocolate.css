@@ -45,7 +45,7 @@
 .extrudeButton-image-view       { -fx-image: url("Milk-chocolate/extrude.png"); }
 .filletButton-image-view        { -fx-image: url("light/fillet.png"); }
 #visbilityButton .image-view     { -fx-image: url("light/showMenu.png"); }
-.groupButton-image-view         { -fx-image: url("light/group.png"); }
+.groupButton-image-view         { -fx-image: url("Milk-chocolate/group.png"); }
 .ungroupButton-image-view       { -fx-image: url("light/ungroup.png"); }
 .alignButton-mage-view         { -fx-image: url("light/align.png"); }
 .mirronButton-image-view        { -fx-image: url("light/mirror.png"); }
