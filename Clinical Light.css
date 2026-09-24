@@ -1,0 +1,712 @@
+/* =====================================================
+   CLINICAL THEME STYLESHEET
+   Drop-in replacement for stylesheet.css / dark theme
+
+   Palette (minimal, mid-grey — not paper white):
+     page        #e9ebed
+     surface     #f3f5f6
+     inset       #f3f4f6
+     border      #9aa7ad
+     text        #1c2428
+     muted       #5a656b
+     accent      #2a6f7a
+     accent-soft #c5d6d9
+     hover-fill  #d2e0e3
+     focus       #1a5c66
+     viewport    #d5d9dc → #c4c9cd   (neutral grey, no green)
+
+   Icons: put light-theme icons in a folder named
+   "clinical/" next to this file (copy from your light theme).
+   ===================================================== */
+
+/* ── Size tuning (change these first) ─────────────────
+   JavaFX padding is top right bottom left.
+   Image / toolbar buttons stay compact on purpose.
+*/
+/* Text buttons: Import / Export, dialog OK, settings actions. */
+.button, .normal-button {
+    -fx-padding: 4px 10px 4px 10px;
+    -fx-font-size: 12px;
+}
+/* Icon-only: toolbar (.image-button), menu tools (.menu-button2),
+   tree-row eye (.component-tree-visibility-button). */
+.image-button,
+.menu-button2,
+.component-tree-visibility-button {
+    -fx-padding: 1px;
+}
+/* Only the top toolbar is capped at 32px.
+   Shape-pallet / drawer icons are created in code with larger
+   ImageViews — a global fit-width shrinks those previews. */
+#topBar .image-button .image-view,
+#topBar .menu-button2 .image-view {
+    -fx-fit-width: 32px;
+    -fx-fit-height: 32px;
+    -fx-preserve-ratio: true;
+    -fx-smooth: true;
+}
+/* Shape-tray tile padding (right sidebar, ShapesPallet.java). */
+.image-button-shape-pallet {
+    -fx-padding: 4px;
+}
+/* Plugin badge in the corner of a tray tile (SVG / Blender / FreeCAD /
+   build123d / OpenSCAD / Eclipse). Java default is 20px; this overrides. */
+#objectPallet .svg-image-view,
+#objectPallet .blender-image-view,
+#objectPallet .freecad-image-view,
+#objectPallet .build123d-image-view,
+#objectPallet .openscad-image-view,
+#objectPallet .eclipse-image-view,
+.image-button-shape-pallet .svg-image-view,
+.image-button-shape-pallet .blender-image-view,
+.image-button-shape-pallet .freecad-image-view,
+.image-button-shape-pallet .build123d-image-view,
+.image-button-shape-pallet .openscad-image-view,
+.image-button-shape-pallet .eclipse-image-view {
+    -fx-fit-width: 30px;
+    -fx-fit-height: 30px;
+    -fx-preserve-ratio: true;
+    -fx-smooth: true;
+}
+/* Drawer-header tools above the tray: sketcher, ruler, notes, search. */
+#workplaneButton .image-view,
+#rulerButton .image-view,
+#notesButton .image-view,
+#searchButton .image-view {
+    -fx-fit-width: 40px;
+    -fx-fit-height: 40px;
+    -fx-preserve-ratio: true;
+    -fx-smooth: true;
+}
+/* Script / settings / export tab labels. */
+.tab-pane .tab {
+    -fx-padding: 6px 12px;
+}
+
+/* Top-left pair: home + new doodle. FXML both use 30x30 ImageViews
+   but the PNGs have different padding, so lock the button box. */
+#homeButton, #newDoodle {
+    -fx-pref-width: 36px;
+    -fx-pref-height: 36px;
+    -fx-min-width: 36px;
+    -fx-min-height: 36px;
+    -fx-max-width: 36px;
+    -fx-max-height: 36px;
+    -fx-padding: 1px;
+    -fx-background-insets: 0;
+}
+#homeButton .image-view,
+#newDoodle .image-view {
+    -fx-fit-width: 32px;
+    -fx-fit-height: 32px;
+    -fx-preserve-ratio: true;
+    -fx-smooth: true;
+}
+
+/* Floating 3D overlay: home-camera, fit-all, zoom +/−. */
+#homeViewButton, #fitViewButton {
+    -fx-pref-width: 36px;
+    -fx-pref-height: 36px;
+    -fx-min-width: 36px;
+    -fx-min-height: 36px;
+    -fx-max-width: 36px;
+    -fx-max-height: 36px;
+}
+#homeViewButton .image-view,
+#fitViewButton .image-view,
+#zoomInButton .image-view,
+#zoomOutButton .image-view {
+    -fx-fit-width: 30px;
+    -fx-fit-height: 30px;
+    -fx-preserve-ratio: true;
+    -fx-smooth: true;
+}
+
+/* Smooth scaled toolbar icons (JavaFX ImageView styleable property) */
+.image-view {
+    -fx-smooth: true;
+}
+
+
+/* ── App chrome / page ────────────────────────────────
+   Stage root + generic AnchorPane (MainWindow background). */
+.root                       { -fx-background-color: #e9ebed; }
+.anchor-pane                { -fx-background-color: #e9ebed; }
+.label                      { -fx-text-fill: #1c2428; }
+
+
+
+/* ── Regular buttons ──────────────────────────────────
+   Default Button (Import / Export, dialogs). */
+.button                                  { -fx-background-color: #f3f5f6; -fx-border-color: #9aa7ad; -fx-border-width: 1px; -fx-border-radius: 3px; -fx-background-radius: 3px; -fx-text-fill: #1c2428; }
+.button:hover                            { -fx-background-color: #d2e0e3; -fx-border-color: #2a6f7a; -fx-border-width: 1px; -fx-cursor: hand; }
+.button:pressed                          { -fx-background-color: #b8d0d4; -fx-border-color: #1a5c66; -fx-text-fill: #1c2428; }
+.button:focused                          { -fx-border-color: #2a6f7a; -fx-border-width: 2px; }
+.button:disabled                         { -fx-opacity: 0.4; }
+
+
+
+
+/* ── Image buttons — toolbar icons ────────────────────
+   Transparent on #topBar / drawers. Hover = teal border + wash.
+   -focus = keyboard ring; -highlight = latched tool. */
+.image-button {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+    -fx-border-width: 1px;
+    -fx-border-radius: 3px;
+    -fx-background-radius: 3px;
+    -fx-background-insets: 1;
+    -fx-text-fill: #1c2428;
+}
+.image-button:focused       { -fx-border-color: #2a6f7a; -fx-border-width: 1px; }
+.image-button:pressed       { -fx-background-color: #b8d0d4; -fx-border-color: #1a5c66; }
+.image-button:hover         { -fx-background-color: #d2e0e3; -fx-border-color: #2a6f7a; -fx-cursor: hand; }
+.image-button-focus         { -fx-border-color: #2a6f7a; }
+.image-button-focus:hover   { -fx-background-color: #d2e0e3; -fx-border-color: #2a6f7a; }
+.image-button-highlight     { -fx-background-color: #c5d6d9; -fx-background-insets: 0; -fx-border-color: #2a6f7a; }
+.image-button-highlight:hover { -fx-background-color: #b8d0d4; -fx-border-color: #1a5c66; }
+
+
+
+
+/* Memory readout, far right of #topBar (JavaFX Text, not Label). */
+#memoryUsageText {
+    -fx-fill: #1c2428;
+    -fx-font-size: 10px;
+}
+/* ── Normal buttons ───────────────────────────────────
+   Same family as .button; FXML styleClass="normal-button". */
+.normal-button {
+    -fx-background-color: #f3f5f6;
+    -fx-background-insets: 0;
+    -fx-border-width: 1px;
+    -fx-border-color: #9aa7ad;
+    -fx-border-radius: 3px;
+    -fx-background-radius: 3px;
+    -fx-text-fill: #1c2428;
+}
+.normal-button:hover    { -fx-background-color: #d2e0e3; -fx-border-color: #2a6f7a; -fx-cursor: hand; }
+.normal-button:focused  { -fx-border-width: 1px; -fx-border-color: #2a6f7a; }
+.normal-button:pressed  { -fx-background-color: #b8d0d4; -fx-border-color: #1a5c66; }
+
+/* ── Menu button2 ─────────────────────────────────────
+   Toolbar MenuButton (visibility, shape-op menus). Matches .image-button. */
+.menu-button2 {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+    -fx-border-width: 1px;
+    -fx-border-radius: 3px;
+    -fx-background-radius: 3px;
+    -fx-background-insets: 0;
+}
+.menu-button2 > .label          { -fx-padding: 0; }
+.menu-button2:focused           { -fx-border-color: #2a6f7a; }
+.menu-button2:pressed           { -fx-background-color: #b8d0d4; -fx-border-color: #1a5c66; }
+.menu-button2:hover             { -fx-background-color: #d2e0e3; -fx-border-color: #2a6f7a; -fx-cursor: hand; }
+.menu-button2-focus             { -fx-border-color: #2a6f7a; }
+.menu-button2-focus:hover       { -fx-background-color: #d2e0e3; -fx-border-color: #2a6f7a; }
+.menu-button2-highlight         { -fx-background-color: #c5d6d9; -fx-background-insets: 0; -fx-border-color: #2a6f7a; }
+.menu-button2-highlight:hover   { -fx-background-color: #b8d0d4; -fx-border-color: #1a5c66; }
+
+/* ── Text inputs ──────────────────────────────────────
+   Generic TextField; also project-name and search. Notes use .text-area. */
+.text-field {
+    -fx-background-color: #f3f5f6;
+    -fx-border-color: #9aa7ad;
+    -fx-border-width: 1px;
+    -fx-text-fill: #1c2428;
+    -fx-prompt-text-fill: #5a656b;
+    -fx-padding: 4px 8px 4px 8px;
+    -fx-font-size: 12px;
+    -fx-pref-height: 26px;
+    -fx-min-height: 26px;
+    -fx-max-height: 28px;
+}
+.text-field:focused {
+    -fx-border-color: #2a6f7a;
+}
+.text-area {
+    -fx-background-color: #f3f5f6;
+    -fx-border-color: #9aa7ad;
+    -fx-border-width: 1px;
+    -fx-text-fill: #1c2428;
+}
+.text-area .content                         { -fx-background-color: #f3f5f6; }
+.text-area .viewport                        { -fx-background-color: #f3f5f6; }
+.text-area .scroll-pane                     { -fx-background-color: #f3f5f6; }
+.text-area .scroll-pane .viewport           { -fx-background-color: #f3f5f6; }
+.text-area .scroll-bar:horizontal .track,
+.text-area .scroll-bar:vertical .track      { -fx-background-color: #f3f4f6; }
+
+/* ── Scroll panes ─────────────────────────────────────
+   Shape tray, component tree, settings pages, script tabs. */
+.scroll-pane                                { -fx-background-color: #e9ebed; }
+.scroll-pane > .viewport                    { -fx-background-color: #e9ebed; }
+.scroll-pane .scroll-bar:horizontal,
+.scroll-pane .scroll-bar:vertical           { -fx-background-color: #f3f4f6; }
+.scroll-pane .scroll-bar:horizontal .thumb,
+.scroll-pane .scroll-bar:vertical .thumb    { -fx-background-color: #7e8c93; }
+.scroll-pane .increment-button,
+.scroll-pane .decrement-button              { -fx-background-color: #f3f4f6; }
+.scroll-pane .increment-arrow,
+.scroll-pane .decrement-arrow               { -fx-background-color: #1c2428; }
+.scroll-pane .scroll-bar:horizontal .track,
+.scroll-pane .scroll-bar:vertical .track    { -fx-background-color: #f3f4f6; }
+.scroll-pane > .corner                      { -fx-background-color: #f3f4f6; }
+
+/* ── Layout helpers ───────────────────────────────────
+   .vbox = settings stacks; .grid-pane = parameter forms.
+   .timeline-* = keyframe ruler under the 3D view. */
+.vbox       { -fx-spacing: 10; -fx-padding: 10; }
+.grid-pane  { -fx-grid-line-color: #9aa7ad; -fx-background-color: #e9ebed; -fx-background-radius: 5; -fx-padding: 8; -fx-hgap: 8; -fx-vgap: 8; }
+.separator  { -fx-background-color: #9aa7ad; }
+.timeline-place {
+    -fx-pref-width: 6px;
+}
+
+.timeline-place .line {
+    -fx-background-color: #bb1f09;
+    -fx-border-width: 6px;
+}
+.timeline-none {
+    -fx-pref-width: 2px;
+}
+
+.timeline-none .line {
+    -fx-background-color: transparent;
+    -fx-border-width: 2px;
+}
+.timeline-block {
+    -fx-pref-width: 8px;
+}
+
+.timeline-block .line {
+    -fx-background-color: #c9a227;
+    -fx-border-width: 8px;
+}
+/* ── Named IDs (MainWindow.fxml) ──────────────────────
+   #topBar           top chrome (logo, home, filename, memory)
+   #fileNameBox      project name field
+   #controlBar       parameter strip under the toolbar
+   #view3d           3D viewport   #control3d overlay (zoom/home/fit)
+   #drawerArea       right drawer  #drawerGrid / #objectPallet shape tray
+   #searchField      tray search   #shapeCategory "Basic Shapes" combo
+   #shapeConfiguration  selected-solid property editor
+   #projectGrid      home-screen project thumbnails
+   #snapGrid         snap-increment combo
+   #drawerButton / #timelineButton  edge toggles */
+#drawerButton, #timelineButton  { -fx-border-width: 0; -fx-background-insets: 0 6; }
+#RobotLabDrawer                 { -fx-border-width: 0; }
+#controlBar         { -fx-border-width: 1px; -fx-border-color: #9aa7ad; -fx-background-color: #f3f4f6; -fx-padding: 4px 8px; -fx-hgap: 8; -fx-vgap: 4; }
+#controlBar .label  { -fx-font-size: 11px; -fx-padding: 0 8px 0 4px; -fx-text-fill: #1c2428; }
+#drawerArea         { -fx-border-width: 1px; -fx-border-color: #9aa7ad; -fx-background-color: #f3f4f6; }
+#shapeConfigurationBox          { -fx-border-width: 1px; -fx-border-color: #9aa7ad; }
+#fileNameBox        { -fx-background-color: #f3f5f6; -fx-border-width: 1px; -fx-border-color: #9aa7ad; -fx-padding: 4px 8px 4px 8px; -fx-pref-height: 28px; -fx-max-height: 30px; -fx-font-size: 12px; }
+#searchField        { -fx-padding: 4px 8px 4px 10px; -fx-font-size: 12px; }
+#view3d             { -fx-background-color: #e8eaec; }
+#control3d          { -fx-background-color: transparent; }
+#drawerGrid         { -fx-background-color: #f3f4f6; -fx-hgap: 6; -fx-vgap: 6; -fx-padding: 6; }
+#projectGrid        { -fx-background-color: #e9ebed; }
+#totalApplicationBackground     { -fx-background-color: #e9ebed; }
+#topBar             { -fx-background-color: #f7f8f9; }
+#objectPallet       { -fx-background-color: #e9ebed; -fx-hgap: 8; -fx-vgap: 8; -fx-padding: 8; }
+#shapeConfiguration { -fx-background-color: #e9ebed; }
+#configurationGrid  { -fx-background-color: #e9ebed; }
+#anchorPanForConfiguration      { -fx-background-color: #e9ebed; }
+#snapGrid           { -fx-background-color: #f3f5f6; -fx-border-color: #9aa7ad; -fx-font-size: 12px; -fx-pref-height: 26px; -fx-max-height: 28px; -fx-padding: 2px 6px; }
+#shapeCategory      { -fx-background-color: #f3f5f6; -fx-border-color: #9aa7ad; -fx-border-radius: 3px; -fx-border-width: 1px; -fx-font-size: 12px; }
+
+/* ── Combo boxes ──────────────────────────────────────
+   Category dropdown, snap grid, settings "pin to version", number pickers. */
+.combo-box {
+    -fx-background-color: #f3f5f6;
+    -fx-border-color: #9aa7ad;
+    -fx-border-radius: 3px;
+    -fx-border-width: 1px;
+    -fx-padding: 2px 4px 2px 4px;
+    -fx-font-size: 12px;
+    -fx-pref-height: 26px;
+    -fx-min-height: 26px;
+    -fx-max-height: 28px;
+}
+.combo-box:hover                    { -fx-border-color: #2a6f7a; }
+.combo-box .list-cell {
+    -fx-background-color: #f3f5f6;
+    -fx-text-fill: #1c2428;
+    -fx-padding: 3px 8px 3px 8px;
+    -fx-pref-height: 24px;
+    -fx-font-size: 12px;
+}
+.combo-box-popup .list-view         { -fx-background-color: #f3f5f6; -fx-border-color: #9aa7ad; -fx-border-width: 1px; }
+.combo-box-popup .list-cell {
+    -fx-background-color: #f3f5f6;
+    -fx-text-fill: #1c2428;
+    -fx-padding: 3px 8px;
+    -fx-pref-height: 22px;
+    -fx-font-size: 12px;
+}
+.combo-box-popup .list-cell:hover   { -fx-background-color: #d2e0e3; }
+.combo-box-popup .list-cell:selected { -fx-background-color: #c5d6d9; }
+#shapeCategory {
+    -fx-pref-height: 26px;
+    -fx-min-height: 26px;
+    -fx-max-height: 28px;
+    -fx-padding: 2px 4px;
+}
+
+/* ── Progress bar ─────────────────────────────────────
+   Export / load / plugin-fetch. */
+.progress-bar       { -fx-background-color: #f3f4f6; -fx-border-color: #9aa7ad; -fx-border-width: 1px; -fx-background-radius: 3px; -fx-border-radius: 3px; }
+.progress-bar > .bar { -fx-background-color: #2a6f7a; -fx-background-radius: 2px; -fx-padding: 0.25em; }
+
+/* ── Titled pane ──────────────────────────────────────
+   Collapsible section headers (settings groups, advanced config). */
+.titled-pane > .title               { -fx-background-color: #f3f4f6; -fx-text-fill: #1c2428; }
+
+/* ── Tab pane ─────────────────────────────────────────
+   Script tabs (STL / SVG / Blender / FreeCAD / OpenSCAD / robot lab)
+   and the settings window tabs. */
+.tab-pane                           { -fx-background-color: #e9ebed; -fx-border-color: #9aa7ad; -fx-border-width: 1px; }
+.tab-pane .tab-header-area          { -fx-background-color: #f3f4f6; -fx-padding: 5px; }
+.tab-pane .tab-header-area .tab-header-background { -fx-background-color: #f3f4f6; }
+.tab-pane .tab-header-area .control-buttons-tab   { -fx-background-color: #f3f4f6; }
+.tab-pane .tab                      { -fx-background-color: #f3f5f6; -fx-background-radius: 3px 3px 0 0; -fx-border-color: #9aa7ad; -fx-border-width: 1px 1px 0 1px; -fx-text-fill: #1c2428; }
+.tab-pane .tab:hover                { -fx-background-color: #d2e0e3; -fx-border-color: #2a6f7a; -fx-cursor: hand; }
+.tab-pane .tab:selected             { -fx-background-color: #e9ebed; -fx-border-color: #2a6f7a; -fx-border-width: 1px 1px 0 1px; -fx-text-fill: #1c2428; }
+.tab-pane .tab-content-area         { -fx-background-color: #e9ebed; -fx-border-color: #9aa7ad; -fx-border-width: 1px; -fx-padding: 10px; }
+.tab-pane .tab .tab-label           { -fx-font-size: 13px; -fx-font-weight: bold; }
+.tab-pane .tab .tab-close-button    { -fx-background-color: transparent; }
+.tab-pane .tab .tab-close-button:hover { -fx-background-color: #9aa7ad; }
+.tab-pane .tab-content-area .anchor-pane { -fx-background-color: transparent; -fx-border-width: 0; -fx-padding: 0; }
+
+/* ── Component tree ───────────────────────────────────
+   Left-side CSG / group tree (ComponentTreePanel.java). */
+.component-tree-panel               { -fx-background-color: #f3f4f6; -fx-border-color: #9aa7ad; -fx-border-width: 1px; }
+.component-tree-resize-handle       { -fx-background-color: transparent; }
+.component-tree-resize-handle:hover { -fx-background-color: rgba(42,111,122,0.18); }
+.component-tree-header              { -fx-background-color: #f3f5f6; -fx-border-color: #9aa7ad; -fx-border-width: 0 0 1px 0; -fx-font-weight: bold; -fx-padding: 6px 8px; -fx-text-fill: #2a6f7a; }
+.component-tree-view                { -fx-background-color: #f3f4f6; -fx-border-width: 0; }
+.component-tree-view .tree-cell     { -fx-background-color: #f3f4f6; -fx-text-fill: #1c2428; }
+.component-tree-view .tree-cell:hover { -fx-background-color: #d2e0e3; }
+.component-tree-view .tree-cell:selected,
+.component-tree-view .tree-cell.component-tree-cell-selected { -fx-background-color: #c5d6d9; -fx-text-fill: #1c2428; }
+.component-tree-view .tree-cell.component-tree-cell-root,
+.component-tree-view .tree-cell.component-tree-cell-group    { -fx-font-weight: bold; }
+.component-tree-view .tree-cell.component-tree-cell-hidden   { -fx-text-fill: #5a656b; -fx-font-style: italic; }
+.component-tree-visibility-button   { -fx-background-color: transparent; -fx-background-radius: 3px; -fx-border-color: transparent; -fx-padding: 3px; }
+.component-tree-visibility-button:hover { -fx-background-color: rgba(42,111,122,0.14); -fx-border-color: #2a6f7a; }
+
+/* ── Anchor pane variants ─────────────────────────────
+   .button-style = clickable cards (home tiles). .card-style = dialog cards.
+   .primary / .secondary / .warning / .light = status surfaces. */
+.anchor-pane.button-style           { -fx-background-color: #f3f5f6; -fx-border-color: #9aa7ad; -fx-cursor: hand; -fx-border-width: 1px; }
+.anchor-pane.button-style:hover     { -fx-background-color: #d2e0e3; -fx-border-color: #2a6f7a; }
+.anchor-pane.button-style:pressed   { -fx-background-color: #b8d0d4; -fx-border-color: #1a5c66; }
+.anchor-pane.light                  { -fx-background-color: #f3f5f6; -fx-effect: dropshadow(three-pass-box, rgba(28,36,40,0.10), 5, 0, 0, 2); -fx-border-width: 1px; }
+.anchor-pane.primary                { -fx-background-color: #2a6f7a; -fx-border-color: #1a5c66; -fx-text-fill: #ffffff; -fx-border-width: 1px; }
+.anchor-pane.secondary              { -fx-background-color: #f3f4f6; -fx-border-color: #9aa7ad; -fx-text-fill: #1c2428; -fx-border-width: 1px; }
+.anchor-pane.card-style             { -fx-background-color: #f3f5f6; -fx-background-radius: 6px; -fx-effect: dropshadow(three-pass-box, rgba(28,36,40,0.12), 8, 0, 0, 2); -fx-border-width: 1px; -fx-border-color: #9aa7ad; -fx-padding: 20px; }
+.anchor-pane.warning                { -fx-background-color: #f3f5f6; -fx-border-color: #8a4a4a; -fx-text-fill: #1c2428; -fx-border-width: 1px; }
+
+/* ── Scroll bars (global) ───────────────────────────── */
+.scroll-bar                              { -fx-background-color: #f3f4f6; }
+.scroll-bar .thumb                       { -fx-background-color: #7e8c93; -fx-background-radius: 4px; }
+.scroll-bar .thumb:hover                 { -fx-background-color: #2a6f7a; }
+.scroll-bar .thumb:pressed               { -fx-background-color: #1a5c66; }
+.scroll-bar .track                       { -fx-background-color: #f3f4f6; }
+.scroll-bar .track-background            { -fx-background-color: #f3f4f6; }
+.scroll-bar .increment-button,
+.scroll-bar .decrement-button            { -fx-background-color: #f3f4f6; -fx-padding: 4px; }
+.scroll-bar .increment-button:hover,
+.scroll-bar .decrement-button:hover      { -fx-background-color: #d2e0e3; }
+.scroll-bar .increment-arrow,
+.scroll-bar .decrement-arrow             { -fx-background-color: #1c2428; }
+
+/* ── Context menus ────────────────────────────────────
+   Right-click on the 3D view, tree, tray tiles, timeline. */
+.context-menu {
+    -fx-background-color: #f3f5f6;
+    -fx-border-color: #9aa7ad;
+    -fx-border-width: 1px;
+    -fx-padding: 4px 0;
+}
+.context-menu .menu-item                 { -fx-background-color: transparent; }
+.context-menu .menu-item .label          { -fx-text-fill: #1c2428; }
+.context-menu .menu-item:hover,
+.context-menu .menu-item:focused         { -fx-background-color: #d2e0e3; }
+.context-menu .menu-item:hover .label,
+.context-menu .menu-item:focused .label  { -fx-text-fill: #1c2428; }
+.context-menu .menu-item:disabled .label { -fx-text-fill: #5a656b; }
+.context-menu .separator .line           { -fx-border-color: #9aa7ad; -fx-border-width: 1px 0 0 0; }
+.context-menu .menu-item > .right-container > .arrow { -fx-background-color: #1c2428; }
+
+/* ── Spinner ──────────────────────────────────────────
+   Numeric steppers in the property editor (width / height / count). */
+.spinner                                 { -fx-background-color: #f3f5f6; -fx-border-color: #9aa7ad; -fx-border-width: 1px; -fx-border-radius: 3px; }
+.spinner .text-field                     { -fx-background-color: #f3f5f6; -fx-text-fill: #1c2428; -fx-border-width: 0; }
+.spinner .increment-arrow-button,
+.spinner .decrement-arrow-button         { -fx-background-color: #f3f4f6; -fx-border-color: #9aa7ad; -fx-border-width: 0 0 0 1px; }
+.spinner .increment-arrow-button:hover,
+.spinner .decrement-arrow-button:hover   { -fx-background-color: #d2e0e3; -fx-border-color: #2a6f7a; }
+.spinner .increment-arrow-button:pressed,
+.spinner .decrement-arrow-button:pressed { -fx-background-color: #b8d0d4; }
+.spinner .increment-arrow,
+.spinner .decrement-arrow                { -fx-background-color: #1c2428; }
+
+/* ── Editable combo box ───────────────────────────────
+   setUpNumberChoices(): typed number + drop-down of presets. */
+.combo-box:editable .text-field          { -fx-background-color: #f3f5f6; -fx-text-fill: #1c2428; -fx-border-width: 0; -fx-padding: 1px 6px; -fx-pref-height: 22px; -fx-max-height: 24px; }
+.combo-box .arrow-button                 { -fx-background-color: #f3f4f6; -fx-border-color: #9aa7ad; -fx-border-width: 0 0 0 1px; -fx-padding: 0 6px; }
+.combo-box .arrow-button:hover           { -fx-background-color: #d2e0e3; }
+.combo-box .arrow-button .arrow          { -fx-background-color: #1c2428; }
+
+/* ── Radio buttons ────────────────────────────────────
+   Settings → updates: Check on launch / Bug-fix only / Pin to version. */
+.radio-button {
+    -fx-text-fill: #1c2428;
+    -fx-font-size: 13px;
+    -fx-padding: 2px 0 2px 0;
+    -fx-label-padding: 0 0 0 6px;
+}
+.radio-button .radio,
+.radio-button:selected .radio {
+    -fx-background-color: #f3f5f6;
+    -fx-border-color: #2a6f7a;
+    -fx-border-width: 2px;
+    -fx-border-radius: 50%;
+    -fx-background-radius: 50%;
+    -fx-padding: 5px;
+    -fx-min-width: 18px;
+    -fx-min-height: 18px;
+    -fx-pref-width: 18px;
+    -fx-pref-height: 18px;
+    -fx-max-width: 18px;
+    -fx-max-height: 18px;
+}
+.radio-button:hover .radio               { -fx-border-color: #1a5c66; }
+.radio-button:selected .radio            { -fx-border-color: #2a6f7a; -fx-padding: 5px; }
+.radio-button:selected .dot              { -fx-background-color: #2a6f7a; -fx-background-radius: 50%; -fx-padding: 4px; }
+
+/* ── Check boxes ──────────────────────────────────────
+   Settings toggles: Enable Manifold Library, Enable advanced features. */
+.check-box {
+    -fx-text-fill: #1c2428;
+    -fx-font-size: 13px;
+    -fx-padding: 2px 0 2px 0;
+    -fx-label-padding: 0 0 0 6px;
+}
+.check-box .box,
+.check-box:selected .box {
+    -fx-background-color: #f3f5f6;
+    -fx-border-color: #2a6f7a;
+    -fx-border-width: 2px;
+    -fx-border-radius: 2px;
+    -fx-background-radius: 2px;
+    -fx-padding: 3px;
+    -fx-min-width: 18px;
+    -fx-min-height: 18px;
+    -fx-pref-width: 18px;
+    -fx-pref-height: 18px;
+    -fx-max-width: 18px;
+    -fx-max-height: 18px;
+}
+.check-box:hover .box                    { -fx-border-color: #1a5c66; }
+.check-box:selected .box                 { -fx-background-color: #2a6f7a; -fx-border-color: #2a6f7a; -fx-padding: 3px; }
+.check-box:selected .mark                { -fx-background-color: #ffffff; -fx-padding: 5px; }
+.check-box:indeterminate .box            { -fx-background-color: #c5d6d9; -fx-border-color: #2a6f7a; }
+
+/* ── Color picker ─────────────────────────────────────
+   Solid / face color field in the property editor. */
+.color-picker {
+    -fx-background-color: #f3f5f6;
+    -fx-border-color: #9aa7ad;
+    -fx-border-width: 1px;
+    -fx-border-radius: 3px;
+    -fx-background-radius: 3px;
+}
+
+.color-picker:hover {
+    -fx-background-color: #d2e0e3;
+    -fx-border-color: #2a6f7a;
+}
+
+.color-picker .label {
+    -fx-text-fill: #1c2428;
+}
+
+.color-picker .arrow-button {
+    -fx-background-color: #f3f4f6;
+    -fx-border-color: #9aa7ad;
+    -fx-border-width: 0 0 0 1px;
+}
+
+.color-picker .arrow {
+    -fx-background-color: #1c2428;
+}
+
+/* popup palette */
+.color-palette {
+    -fx-background-color: #f3f5f6;
+    -fx-border-color: #9aa7ad;
+}
+
+.color-palette .hyperlink {
+    -fx-text-fill: #2a6f7a;
+}
+
+/* ── Progress indicator ───────────────────────────────
+   Spinner while a plugin / mesh job runs. */
+.progress-indicator {
+    -fx-progress-color: #2a6f7a;
+}
+
+.progress-indicator .percentage {
+    -fx-fill: #1c2428;
+}
+
+.progress-indicator .spinner {
+    -fx-background-color: transparent;
+}
+
+/* ── MenuButton caret ─────────────────────────────────
+   Chevron on visibility / boolean / operation menus. */
+.menu-button .arrow-button {
+    -fx-background-color: transparent;
+}
+
+.menu-button .arrow {
+    -fx-background-color: #1c2428;
+}
+
+.menu-button:hover .arrow {
+    -fx-background-color: #1c2428;
+}
+
+.menu-button:pressed .arrow {
+    -fx-background-color: #f3f5f6;
+}
+
+
+/* ── 3D workplane grid tokens ─────────────────────────
+   Milk-Chocolate.css names:
+     key   = major grid lines
+     dark  = fine / mm grid
+     light = plane wash (keep light + translucent or the board goes solid)
+   BowlerStudio reads -fx-text-fill (including alpha) from these classes. */
+.grid-key-color {
+    -fx-text-fill: #6d757ccc;
+}
+.grid-dark-color {
+    -fx-text-fill: #8b939a88;
+}
+.grid-light-color {
+    -fx-text-fill: #eef0f250;
+}
+
+.image-button-shape-pallet {
+    -fx-background-color: #f3f5f6;
+    -fx-border-color: #9aa7ad;
+    -fx-border-width: 1px;
+    -fx-border-radius: 3px;
+    -fx-background-insets: 1;
+    -fx-padding: 3px;
+}
+.image-button-shape-pallet:focused       { -fx-border-color: #2a6f7a; }
+.image-button-shape-pallet:pressed       { -fx-background-color: #b8d0d4; -fx-border-color: #1a5c66; }
+.image-button-shape-pallet:hover         { -fx-background-color: #d2e0e3; -fx-border-color: #2a6f7a; -fx-cursor: hand; }
+
+/* ── Icon bindings ────────────────────────────────────
+   Each selector is an fx:id or styleClass from MainWindow.fxml /
+   PluginType.java. Files live in clinical/ next to this sheet. */
+
+/* Home screen + top bar */
+#makeRobotButton .image-view     { -fx-image: url("clinical/newRobot.png"); }          /* new robot project */
+#homeButton .image-view          { -fx-image: url("clinical/CADoodleHome.png"); }
+.biglogo-cadoodle        		 { -fx-image: url("clinical/biglogo.png"); }
+.biglogo-advanced {
+    -fx-image: url("clinical/biglogoAdvanced.png");
+    -fx-fit-width: 145px;
+    -fx-fit-height: 36px;
+    -fx-preserve-ratio: true;
+}
+#homeViewButton .image-view      { -fx-image: url("clinical/home.png"); }
+#fitViewButton .image-view       { -fx-image: url("clinical/fit.png"); }
+#zoomInButton .image-view        { -fx-image: url("clinical/zoomIn.png"); }
+#zoomOutButton .image-view       { -fx-image: url("clinical/zoomOut.png"); }
+#holeButton .image-view          { -fx-image: url("clinical/holes.png"); }
+#workplaneButton .image-view     { -fx-image: url("clinical/Sketcher.png"); }
+#rulerButton .image-view         { -fx-image: url("clinical/ruler.png"); }
+#notesButton .image-view         { -fx-image: url("clinical/notes.png"); }
+#searchButton .image-view        { -fx-image: url("clinical/search.png"); }
+.hexDistributeButtonImage { -fx-image: url("clinical/distribute.png"); }
+.boltHoleButtonImage-view     { -fx-image: url("clinical/boltHolePattern.png"); }
+.extrudeButton-image-view       { -fx-image: url("clinical/extrude.png"); }
+.filletButton-image-view        { -fx-image: url("clinical/fillet.png"); }
+#visbilityButton .image-view     { -fx-image: url("clinical/showMenu.png"); }
+.groupButton-image-view         { -fx-image: url("clinical/group.png"); }
+.ungroupButton-image-view       { -fx-image: url("clinical/ungroup.png"); }
+.alignButton-mage-view         { -fx-image: url("clinical/align.png"); }
+.mirronButton-image-view        { -fx-image: url("clinical/mirror.png"); }
+#cruiseButton .image-view        { -fx-image: url("clinical/magnet.png"); }
+#objectWorkplane .image-view     { -fx-image: url("clinical/workplaneToObject.png"); }
+#dropToWorkplane .image-view     { -fx-image: url("clinical/drop.png"); }
+#copyButton .image-view          { -fx-image: url("clinical/copy.png"); }
+.pasteButton-mage-view         { -fx-image: url("clinical/paste.png"); }
+.deleteButton-image-view        { -fx-image: url("clinical/trash.png"); }
+#undoButton .image-view          { -fx-image: url("clinical/back.png"); }
+#redoButton .image-view          { -fx-image: url("clinical/forward.png"); }
+#stl .image-view                 { -fx-image: url("clinical/Script-Tab-Stl.png"); }
+#manifoldSTL .image-view         { -fx-image: url("clinical/Script-Tab-Stl.png"); }
+.svg-image-view                 { -fx-image: url("clinical/Script-Tab-SVG.png"); }
+.blender-image-view             { -fx-image: url("clinical/Script-Tab-Blender.png"); }
+.freecad-image-view             { -fx-image: url("clinical/Script-Tab-FreeCAD.png"); }
+.build123d-image-view             { -fx-image: url("clinical/build123d.png"); }
+.openscad-image-view             { -fx-image: url("clinical/Script-Tab-OpenSCAD.png"); }
+.eclipse-image-view             { -fx-image: url("clinical/eclipse.png"); }
+#obj .image-view                 { -fx-image: url("clinical/ObjImg.png"); }
+#type3mf .image-view             { -fx-image: url("clinical/3mf.png"); }
+#exportButton .image-view        { -fx-image: url("clinical/export-button.png"); }
+#newDoodle .image-view           { -fx-image: url("clinical/newFile.png"); }
+#copyDoodle .image-view          { -fx-image: url("clinical/copy.png"); }
+#robotHeaderImage   { -fx-image: url("clinical/robot-3.png"); }
+.robot-tab-icon     { -fx-image: url("clinical/robot-3.png"); }
+.dark-bulb-icon      { -fx-image: url("clinical/darkBulb.png"); }
+.lit-bulb-icon      { -fx-image: url("clinical/litBulb.png"); }
+.lock-icon         { -fx-image: url("clinical/lock.png"); }
+.unlock-icon         { -fx-image: url("clinical/unlock.png"); }
+.open-drawer              { -fx-image: url("clinical/drawerClose.png"); }
+.close-drawer			  { -fx-image: url("clinical/drawerOpen.png"); }
+#RobotLabDrawerImage      { -fx-image: url("clinical/robot-3.png"); }
+.tree-icon                { -fx-image: url("clinical/tree.png"); }
+.load-limb-arms-icon      { -fx-image: url("clinical/Load-Limb-Arms.png"); }
+.advanced-config-icon     { -fx-image: url("clinical/Advanced-Configuration.png"); }
+.notes-icon               { -fx-image: url("clinical/notes.png"); }
+.extraGroupImage { -fx-image: url("clinical/hull.png"); }
+.hullImage  { -fx-image: url("clinical/hull.png"); }
+.intersectImage { -fx-image: url("clinical/intersect.png"); }
+.xorImage  { -fx-image: url("clinical/xor.png"); }
+.addObject  { -fx-image: url("clinical/addObject.png"); }
+.moveObject  { -fx-image: url("clinical/moveObject.png"); }
+.resizeObject  { -fx-image: url("clinical/resizeObject.png"); }
+.bendSurface  { -fx-image: url("clinical/bend.png"); }
+.cadoodleicon  { -fx-image: url("clinical/CADoodle-Icon.png"); }
+#source .image-view  { -fx-image: url("clinical/CADoodle-Icon.png"); }
+.orthographic-image .image-view               { -fx-image: url("clinical/orthographic.png"); }
+.perspective-image .image-view               { -fx-image: url("clinical/perspective.png"); }
+
+/* ── Nav cube (ViewCube.java) ─────────────────────────
+   Color tokens, not text. -fx-text-fill is the face / edge / corner color. */
+.nav-cube-surface-color {
+    -fx-text-fill:  #f3f4f6;
+}
+.nav-cube-edge-color {
+    -fx-text-fill: #1c2428;
+}
+.nav-cube-corner-color {
+    -fx-text-fill: #9aa7ad;
+}
+
+.nav-cube-corner-hover {
+    -fx-text-fill: #8a4a4a;
+}
