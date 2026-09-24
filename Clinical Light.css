@@ -1,28 +1,13 @@
 /* =====================================================
-   CLINICAL THEME STYLESHEET
-   Drop-in replacement for stylesheet.css / dark theme
 
-   Palette (minimal, mid-grey — not paper white):
-     page        #e9ebed
-     surface     #f3f5f6
-     inset       #f3f4f6
-     border      #9aa7ad
-     text        #1c2428
-     muted       #5a656b
-     accent      #2a6f7a
-     accent-soft #c5d6d9
-     hover-fill  #d2e0e3
-     focus       #1a5c66
-     viewport    #d5d9dc → #c4c9cd   (neutral grey, no green)
+Author : René de Caluwé
+Discord : @Ruhnay
+Git : ReneDeCaluwe
 
-   Icons: put light-theme icons in a folder named
-   "clinical/" next to this file (copy from your light theme).
-   ===================================================== */
+Light theme and icons for the CaDoodle application.
 
-/* ── Size tuning (change these first) ─────────────────
-   JavaFX padding is top right bottom left.
-   Image / toolbar buttons stay compact on purpose.
-*/
+===================================================== */
+
 /* Text buttons: Import / Export, dialog OK, settings actions. */
 .button, .normal-button {
     -fx-padding: 4px 10px 4px 10px;

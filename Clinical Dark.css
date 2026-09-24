@@ -1,28 +1,13 @@
 /* =====================================================
-   CLINICAL DARK THEME STYLESHEET
-   Drop-in replacement for stylesheet.css / dark theme
-   Same layout + sizing as Clinical Minified; inverted palette.
 
-   Palette (minimal, cool charcoal — not navy-purple):
-     page        #1a1d20
-     surface     #24282c
-     inset       #1e2226
-     border      #4a5459
-     text        #e6eaec
-     muted       #8b959b
-     accent      #4aa0ab
-     accent-soft #1e3d42
-     hover-fill  #2c4549
-     focus       #6ec4ce
-     viewport    #1e2226 → #252a2e
+Author : René de Caluwé
+Discord : @Ruhnay
+Git : ReneDeCaluwe
 
-   Icons: reuse the clinical/ folder (blue-on-transparent).
-   ===================================================== */
+Dark theme and icons for the CaDoodle application.
 
-/* ── Size tuning (change these first) ─────────────────
-   JavaFX padding is top right bottom left.
-   Image / toolbar buttons stay compact on purpose.
-*/
+===================================================== */
+
 /* Text buttons: Import / Export, dialog OK, settings actions. */
 .button, .normal-button {
     -fx-padding: 4px 10px 4px 10px;
