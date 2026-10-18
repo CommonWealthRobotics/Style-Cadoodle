@@ -418,7 +418,7 @@
 }
 
 #view3d {
-    -fx-background-color: #f4ede0; /* base cream scene background */
+    -fx-background-color: #fffdf8; /* base cream scene background */
 }
 
 #control3d {
@@ -955,10 +955,10 @@
 }
 
 .grid-key-color {
-    -fx-text-fill: #9f6b55b8; /* main grid: darker milk chocolate, ~72% alpha */
+    -fx-text-fill: #98705bc4; /* main grid: darker milk chocolate, ~77% alpha */
 }
 .grid-dark-color {
-    -fx-text-fill: #b98f7a8c; /* millimeter grid: slightly darker, still lighter than main, ~55% alpha */
+    -fx-text-fill: #b6907bb0; /* millimeter grid: slightly darker, still lighter than main, ~69% alpha */
 }
 .grid-light-color {
     -fx-text-fill: #d9c8ba42; /* grid plane/background: very light, slightly darker than v4, ~26% alpha */
