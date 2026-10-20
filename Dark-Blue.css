@@ -432,6 +432,7 @@
 #source .image-view  { -fx-image: url("light/CADoodle-Icon.png"); }
 .orthographic-image .image-view               { -fx-image: url("light/orthographic.png"); }
 .perspective-image .image-view               { -fx-image: url("light/perspective.png "); }
+.step-image-view                 { -fx-image: url("light/step.png"); }
 
 .nav-cube-surface-color {
     -fx-text-fill:  #1e1e2e; /* theme background */

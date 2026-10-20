@@ -6,6 +6,7 @@
 
 .orthographic-image .image-view               { -fx-image: url("light/orthographic.png"); }
 .perspective-image .image-view               { -fx-image: url("light/perspective.png "); }
+.step-image-view                 { -fx-image: url("light/step.png"); }
 
 #makeRobotButton .image-view     { -fx-image: url("dark/newRobot.png"); }
 #homeButton .image-view          { -fx-image: url("dark/CADoodleHome.png"); }

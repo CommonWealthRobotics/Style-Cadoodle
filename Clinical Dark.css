@@ -683,6 +683,7 @@ Dark theme and icons for the CaDoodle application.
 .orthographic-image .image-view               { -fx-image: url("clinical/orthographic.png"); }
 .perspective-image .image-view               { -fx-image: url("clinical/perspective.png"); }
 
+.step-image-view                 { -fx-image: url("light/step.png"); }
 /* ── Nav cube (ViewCube.java) ─────────────────────────
    Color tokens, not text. -fx-text-fill is the face / edge / corner color. */
 .nav-cube-surface-color {
