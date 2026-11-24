@@ -647,6 +647,7 @@ Dark theme and icons for the CaDoodle application.
 #stl .image-view                 { -fx-image: url("clinical/Script-Tab-Stl.png"); }
 #manifoldSTL .image-view         { -fx-image: url("clinical/Script-Tab-Stl.png"); }
 .svg-image-view                 { -fx-image: url("clinical/Script-Tab-SVG.png"); }
+.simplify-image-view            { -fx-image: url("dark/simplify.png"); }
 .blender-image-view             { -fx-image: url("clinical/Script-Tab-Blender.png"); }
 .freecad-image-view             { -fx-image: url("clinical/Script-Tab-FreeCAD.png"); }
 .build123d-image-view             { -fx-image: url("clinical/build123d.png"); }
